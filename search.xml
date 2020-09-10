@@ -129,13 +129,25 @@
     
     
     <entry>
-      <title>summer</title>
+      <title>夏天</title>
       <link href="/2020/07/05/summer/"/>
       <url>/2020/07/05/summer/</url>
       
-        <content type="html"><![CDATA[<hr><p>title: 夏天<br>categories: young<br>tags: 枯木逢春夏秋冬<br>cover: <a href="https://i.loli.net/2020/09/10/B3uthqv4HTpf8we.jpg" target="_blank" rel="noopener">https://i.loli.net/2020/09/10/B3uthqv4HTpf8we.jpg</a></p><hr><p>  夏天的风很自由。</p>]]></content>
+        <content type="html"><![CDATA[<p>  夏天的风很自由。</p>]]></content>
       
       
+      <categories>
+          
+          <category> young </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 枯木逢春夏秋冬 </tag>
+            
+        </tags>
       
     </entry>
     
