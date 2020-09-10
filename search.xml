@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>夏天</title>
+      <link href="/2020/09/10/%E5%A4%8F%E5%A4%A9/"/>
+      <url>/2020/09/10/%E5%A4%8F%E5%A4%A9/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: 夏天<br>categories: young<br>tags: 枯木逢春夏秋冬</p><p>cover: <a href="https://i.loli.net/2020/09/10/B3uthqv4HTpf8we.jpg" target="_blank" rel="noopener">https://i.loli.net/2020/09/10/B3uthqv4HTpf8we.jpg</a></p><hr><p>  夏天的风很自由。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>two-sum</title>
+      <link href="/2020/07/13/leetcode/twoSum/"/>
+      <url>/2020/07/13/leetcode/twoSum/</url>
+      
+        <content type="html"><![CDATA[<p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p><blockquote><p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p></blockquote><p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> algorithm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>book</title>
+      <link href="/2020/07/13/book/"/>
+      <url>/2020/07/13/book/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> book </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> book </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>shell</title>
+      <link href="/2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/"/>
+      <url>/2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>防火墙常用命令</title>
+      <link href="/2020/07/13/linux/firewall/"/>
+      <url>/2020/07/13/linux/firewall/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe><h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p><strong>系统centos7</strong></p><p>Centos7默认的防火墙不是iptables而是firewall</p><p>查看防火墙状态</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure><p>开启/关闭防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure><p>禁止开机启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure><p>查看开放的端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure><p>监听端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep 8080</span><br></pre></td></tr></table></figure><p>开放/关闭端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;80&#x2F;tcp --permanent      &#x2F;&#x2F;开放端口--permanent重启不会丢失</span><br><span class="line">firewall-cmd --remove-port&#x3D;9999&#x2F;tcp --permanent &#x2F;&#x2F;关闭端口</span><br></pre></td></tr></table></figure><p>重启防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload      &#x2F;&#x2F;开放，关闭端口都需要重启防火墙</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> firewall </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多线程</title>
+      <link href="/2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <url>/2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> thread </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>夏天</title>
+      <link href="/2020/07/05/summer/"/>
+      <url>/2020/07/05/summer/</url>
+      
+        <content type="html"><![CDATA[<p>  夏天的风很自由。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> young </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 枯木逢春夏秋冬 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
