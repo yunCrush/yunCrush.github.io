@@ -8,7 +8,7 @@
       <link href="2020/09/12/linux/linux-1/"/>
       <url>2020/09/12/linux/linux-1/</url>
       
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe><h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">uname --help&#x2F;&#x2F;显示帮助</span><br><span class="line">uname -v&#x2F;&#x2F;输出内核版本信息</span><br><span class="line">uname --version&#x2F;&#x2F;显示版本信息并退出</span><br><span class="line">who am i&#x2F;&#x2F;等于who -m 登陆用户的信息</span><br><span class="line">#&#x2F;&#x2F;root登陆具有所有权限</span><br><span class="line">$&#x2F;&#x2F;普通用户没什么权限</span><br></pre></td></tr></table></figure><h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p>==windows本地安装git bash使用==</p><p><em>1.从远处(服务器)复制文件到本地目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp root@192.168.45.129:&#x2F;usr&#x2F;local&#x2F;tmp&#x2F;test.md .&#x2F;</span><br></pre></td></tr></table></figure><p><em>2.从远处(服务器)复制目录到本地目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp root@192.168.45.129:&#x2F;usr&#x2F;local&#x2F;tmp .&#x2F;</span><br></pre></td></tr></table></figure><p><em>3.上传本地文件到服务器指定目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp &#x2F;opt&#x2F;test.tar root@192.168.45.129:&#x2F;usr&#x2F;local</span><br></pre></td></tr></table></figure><p><em>4.上传本地目录到服务器指定目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp &#x2F;opt&#x2F;soft&#x2F;text root@192.168.45.12:&#x2F;usr&#x2F;local</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe><h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">uname --help&#x2F;&#x2F;显示帮助</span><br><span class="line">uname -v&#x2F;&#x2F;输出内核版本信息</span><br><span class="line">uname --version&#x2F;&#x2F;显示版本信息并退出</span><br><span class="line">who am i&#x2F;&#x2F;等于who -m 登陆用户的信息</span><br><span class="line">#&#x2F;&#x2F;root登陆具有所有权限</span><br><span class="line">$&#x2F;&#x2F;普通用户没什么权限</span><br></pre></td></tr></table></figure><h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p>==windows本地安装git bash使用==</p><p><em>1.从远处(服务器)复制文件到本地目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp root@192.168.45.129:&#x2F;usr&#x2F;local&#x2F;tmp&#x2F;test.md .&#x2F;</span><br></pre></td></tr></table></figure><p><em>2.从远处(服务器)复制目录到本地目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp root@192.168.45.129:&#x2F;usr&#x2F;local&#x2F;tmp .&#x2F;</span><br></pre></td></tr></table></figure><p><em>3.上传本地文件到服务器指定目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp &#x2F;opt&#x2F;test.tar root@192.168.45.129:&#x2F;usr&#x2F;local</span><br></pre></td></tr></table></figure><p><em>4.上传本地目录到服务器指定目录</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp &#x2F;opt&#x2F;soft&#x2F;text root@192.168.45.12:&#x2F;usr&#x2F;local</span><br></pre></td></tr></table></figure><p><em>5.windows文件传输到服务器</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -54,31 +54,6 @@
     
     
     <entry>
-      <title>防火墙常用命令</title>
-      <link href="2020/07/13/linux/firewall/"/>
-      <url>2020/07/13/linux/firewall/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe><h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p><strong>系统centos7</strong></p><p>Centos7默认的防火墙不是iptables而是firewall</p><p>查看防火墙状态</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure><p>开启/关闭防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure><p>禁止开机启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure><p>查看开放的端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure><p>监听端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep 8080</span><br></pre></td></tr></table></figure><p>开放/关闭端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;80&#x2F;tcp --permanent      &#x2F;&#x2F;开放端口--permanent重启不会丢失</span><br><span class="line">firewall-cmd --remove-port&#x3D;9999&#x2F;tcp --permanent &#x2F;&#x2F;关闭端口</span><br></pre></td></tr></table></figure><p>重启防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload      &#x2F;&#x2F;开放，关闭端口都需要重启防火墙</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> firewall </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>book</title>
       <link href="2020/07/13/book/book/"/>
       <url>2020/07/13/book/book/</url>
@@ -96,6 +71,31 @@
         <tags>
             
             <tag> book </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>防火墙常用命令</title>
+      <link href="2020/07/13/linux/firewall/"/>
+      <url>2020/07/13/linux/firewall/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe><h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p><strong>系统centos7</strong></p><p>Centos7默认的防火墙不是iptables而是firewall</p><p>查看防火墙状态</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure><p>开启/关闭防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure><p>禁止开机启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure><p>查看开放的端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure><p>监听端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep 8080</span><br></pre></td></tr></table></figure><p>开放/关闭端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;80&#x2F;tcp --permanent      &#x2F;&#x2F;开放端口--permanent重启不会丢失</span><br><span class="line">firewall-cmd --remove-port&#x3D;9999&#x2F;tcp --permanent &#x2F;&#x2F;关闭端口</span><br></pre></td></tr></table></figure><p>重启防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload      &#x2F;&#x2F;开放，关闭端口都需要重启防火墙</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> firewall </tag>
             
         </tags>
       
