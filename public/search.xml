@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>vim基本使用</title>
+      <link href="2020/09/13/linux/vim-1/"/>
+      <url>2020/09/13/linux/vim-1/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1424018194&auto=1&height=66"></iframe><h2 id="三种模式转换"><a href="#三种模式转换" class="headerlink" title="三种模式转换"></a>三种模式转换</h2><p>命令模式：移动光标、删除  输入: / ?进入命令行模式 输入aiorAIOR进入插入模式</p><p>插入模式：输入文本 按ESC进入命令模式</p><p>命令行模式：搜索保存退出  按Esc进入模式</p><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ol><li><p>移动光标<br>h,j,k,l分别代表左下上右，可以加入数字控制位置,10j,向下移动10行<br>0:移动到当前行首  $:移动前行尾<br>G:移动到文件的最后一行,nG:移动到n行，gg移动到第一行<br>n<Enter> 向下移动n行</p></li><li><p>编辑<br>x:向后删除一个字符    X:向前删除一个字符<br>nx:向后删除n个字符<br>dd:删除一行            ndd:向下删除n行<br>u:撤销前一个操作</p></li><li><p>查找与替换<br> /word: 向后查找word单词，可以是正则表达式</p><p> ?word:向前查找word</p><p> :%s/word1/word2[gc]:将word1替换成word2，g全局，gc替换时确认,%整个文本替换</p><h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><p> i,I:进入插入模式，前者在当前位置插入，后者为当前行第一个非空白字符</p><p> o,O:前者在当前行的后面插入新行，后者在当前行的前面插入新行</p><p> r,R:前者替换光标所在的字符，后者从当前位置开始替换，直到按下Esc为止</p><h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><p> :进入命令行模式<br> :q :没有修改文件时推出</p><p> :q!:修改了文件，但不保存文件退出</p><p> :w:保存文件</p><p> :w [文件名]: 另存为一个新文件，当前文件没有保存</p><p> :w!:强制保存</p><p> :x:保存并退出</p><p> :x!:强制保存退出</p><p> :ZZ:有修改保存退出，没有修改直接退出</p><p> :set nu:显示行号</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python语法</title>
+      <link href="2020/09/13/python/python-1/"/>
+      <url>2020/09/13/python/python-1/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>### 基础语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()#首字母大写</span><br><span class="line">name.upper()#转大写</span><br><span class="line">name.lower()#转小写</span><br><span class="line">name.strip()#取出空格</span><br></pre></td></tr></table></figure>### 数组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])   #取最后一个元素</span><br><span class="line">print(a[:-1])  #除了最后一个全部取出</span><br><span class="line">print(a[::-1]) #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure><h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure><h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure><h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker与Mongodb的安装</title>
       <link href="2020/09/13/mongodb/mongodb-1/"/>
       <url>2020/09/13/mongodb/mongodb-1/</url>
