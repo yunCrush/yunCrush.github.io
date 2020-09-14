@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ElasticSearch入门（1）</title>
+      <link href="2020/09/14/Es/ElasticSearch-1/"/>
+      <url>2020/09/14/Es/ElasticSearch-1/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe><h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><pre><code>这里选择rpm包安装es, rpm -ivh elasticsearch.rpm 文件存在于/usr/share/配置文件存在/etc/elasticsearch/elasticsearch.yml端口9200通过systemctl start elasticsearch启动，status,stop 查看状态与停止elasticsearch.yml          es的相关配置，此处需要将network.host设置为0.0.0.0jvm.options                jvm的相关参数log4j2.properties          日志相关的配置cluster.name               集群名称，判断是否是同一集群node.name                  节点名称，以此作为集群中不同节点的区分条件network.host/http.port     网络地址与端口，用于http和transport服务与使用path.data                  数据的存储地址path.log                   日志的地址</code></pre><p><strong>Development与Production模式说明</strong></p><pre><code>以transport的地址是否绑定在localhost为判断标准network.hostDevelopment模式下启动以warning的方式提示配置检查异常Production模式下在启动时会以error的方式提示配置检查异常修改参数的第二种方式bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol><li><p>ES本地启动集群方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;elasticsearch</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;8200 -Epath.data&#x3D;node2</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;9200 -Epath.data&#x3D;node3</span><br><span class="line">ip:port&#x2F;_cluster&#x2F;stats更多集群相关信息</span><br><span class="line">ip:port&#x2F;_cat&#x2F;nodes节点相关信息，是否组成集群，*表示主节点</span><br></pre></td></tr></table></figure></li><li><p>index</p><p> index由具有相同字段的列表组成，相当于mysql的table,6.0后type _doc不再起作用</p><p> document 文档，每个文档具有唯一的id标识，自行指定或者es生成</p></li></ol><h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><p>目录页对应正排索引，索引页对应倒排索引</p><p>正排索引：文档ID到文档内容，单词的关联关系</p><p>倒排索引：单词到文档ID的关联关系</p><p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/09/14/vUZwgH8DJiM3kcp.png" alt="image.png"></p><p>倒排索引是搜索引擎的核心，主要包含：单词词典与倒排列表</p><p>es存储的每个字段都有自己的倒排索引</p><h2 id="索引API"><a href="#索引API" class="headerlink" title="索引API"></a>索引API</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PUT &#x2F;test_index创建索引</span><br><span class="line">GET _cat&#x2F;indices   查看现有的索引</span><br><span class="line">DELETE  &#x2F;test_index删除索引</span><br><span class="line">GET &#x2F;test_index查看当前索引信息</span><br></pre></td></tr></table></figure><h2 id="文档的创建"><a href="#文档的创建" class="headerlink" title="文档的创建"></a>文档的创建</h2><ol><li><p>单条文档插入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1 单条数据的插入格式：&#x2F;index&#x2F;type&#x2F;id</span><br><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;&#125;</span><br></pre></td></tr></table></figure></li><li><p>批量文档的插入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST test_index&#x2F;_bulk</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;yun&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;,&quot;age&quot;:18&#125;</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;Python Engineer&quot;,&quot;age&quot;:20&#125;</span><br></pre></td></tr></table></figure></li></ol><h2 id="文档的查询"><a href="#文档的查询" class="headerlink" title="文档的查询"></a>文档的查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET&#x2F;test_index&#x2F;_doc&#x2F;1查询单条id&#x3D;1,存储在source里面的完整文档信息</span><br><span class="line">GET&#x2F;test_index&#x2F;_doc&#x2F;_search  query查询，term单词匹配username&#x3D;crush</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br><span class="line">GET &#x2F;test_index&#x2F;_mget查询id是1,2的文档</span><br><span class="line">&#123;&quot;docs&quot;:[&#123;&quot;_id&quot;:&quot;1&quot;,&quot;_id&quot;:&quot;2&quot;&#125;]&#125;</span><br></pre></td></tr></table></figure><h2 id="Search-API"><a href="#Search-API" class="headerlink" title="Search API"></a>Search API</h2><p>对es里面存储的数据进行查询分析，endpoint为_search</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET&#x2F;_search</span><br><span class="line">GET&#x2F;test_index&#x2F;_search</span><br><span class="line">GET&#x2F;test1_index,test2_index&#x2F;_search</span><br><span class="line">GET    &#x2F;test*&#x2F;_search每次可以查询多个索引</span><br></pre></td></tr></table></figure><h3 id="URL-Search与Request-Body-Search"><a href="#URL-Search与Request-Body-Search" class="headerlink" title="URL Search与Request Body Search"></a>URL Search与Request Body Search</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># url search</span><br><span class="line">GET &#x2F;my_index&#x2F;_search?q&#x3D;crush&amp;df&#x3D;user&amp;sort&#x3D;age:asc&amp;from&#x3D;4&amp;size&#x3D;10&amp;timeout&#x3D;15</span><br></pre></td></tr></table></figure><p> q指定查询的语句,df或者default，不指定默认查询，es会查询所有字段,from size用于分页，返回5-14个文档</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># request body search</span><br><span class="line">GET&#x2F;my_index&#x2F;_doc&#x2F;_search</span><br><span class="line">&#123;</span><br><span class="line">&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;user&quot;:&quot;crush&quot;&#125;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="QueryDSL查询"><a href="#QueryDSL查询" class="headerlink" title="QueryDSL查询"></a>QueryDSL查询</h3><p>字段类查询: 全文匹配、match、match_phrase等query,单词匹配：term、terms、range等query</p><p><strong>match Query</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GETtest_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># operator and</span><br><span class="line">GET test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&#123;&quot;query&quot;:&quot;yun crush&quot;,&quot;operator&quot;:&quot;and&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#最小匹配字段数</span><br><span class="line">GETtest_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;job&quot;:&#123;&quot;query&quot;:&quot;java python Engineer&quot;,&quot;minium_should_match&quot;:&quot;2&quot;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vim基本使用</title>
       <link href="2020/09/13/linux/vim-1/"/>
       <url>2020/09/13/linux/vim-1/</url>
@@ -125,31 +144,6 @@
     
     
     <entry>
-      <title>book</title>
-      <link href="2020/07/13/book/book/"/>
-      <url>2020/07/13/book/book/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> book </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> book </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>防火墙常用命令</title>
       <link href="2020/07/13/linux/firewall/"/>
       <url>2020/07/13/linux/firewall/</url>
@@ -167,6 +161,31 @@
         <tags>
             
             <tag> firewall </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多线程</title>
+      <link href="2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <url>2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> thread </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
             
         </tags>
       
@@ -200,23 +219,23 @@
     
     
     <entry>
-      <title>多线程</title>
-      <link href="2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-      <url>2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+      <title>book</title>
+      <link href="2020/07/13/book/book/"/>
+      <url>2020/07/13/book/book/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> thread </category>
+          <category> book </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 多线程 </tag>
+            <tag> book </tag>
             
         </tags>
       
@@ -254,8 +273,8 @@
     
     <entry>
       <title>categories</title>
-      <link href="tags/index.html"/>
-      <url>tags/index.html</url>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -265,8 +284,8 @@
     
     <entry>
       <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
+      <link href="tags/index.html"/>
+      <url>tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
