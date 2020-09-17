@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>算法基本方法总结</title>
+      <link href="2020/09/17/leetcode/algorithm-1/"/>
+      <url>2020/09/17/leetcode/algorithm-1/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=573131630&auto=1&height=66"></iframe><h2 id="基本常识"><a href="#基本常识" class="headerlink" title="基本常识"></a>基本常识</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int [] arr &#x3D; new int[10];  &#x2F;&#x2F;定义数组</span><br><span class="line">int [][]arr2 &#x3D; new int [2][2];</span><br><span class="line">int rows &#x3D; arr.length; &#x2F;&#x2F;行数,length没有()</span><br><span class="line">int columns &#x3D; arr[0].length&#x2F;&#x2F;列数</span><br></pre></td></tr></table></figure><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>*<em>String *</em></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; String to Array</span><br><span class="line">String s1 &#x3D; &quot;a,b,c&quot;;</span><br><span class="line">String [] strArr1 &#x3D; s1.split(&quot;,&quot;);</span><br><span class="line">String s2 &#x3D; &quot;abc&quot;</span><br><span class="line">String [] strArr2 &#x3D; s2.toCharArray()</span><br><span class="line">&#x2F;&#x2F; String to Int</span><br><span class="line">String s3 &#x3D; String.valueOf(123)</span><br><span class="line">int num1&#x3D; Integer.parseInt(s3)</span><br></pre></td></tr></table></figure><p><strong>Array</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int [] arr &#x3D; &#123;1,2,3&#125;</span><br><span class="line">list &#x3D; Arrays.asList(array)</span><br><span class="line">int [] arr &#x3D; list.toArray()</span><br><span class="line">&#x2F;&#x2F;List to Array</span><br><span class="line">&#x2F;&#x2F; List initalization</span><br><span class="line">List&lt;String&gt; list &#x3D; Arrays.asList(&quot;abc&quot;,&quot;cde&quot;);</span><br><span class="line">String [] indexArr &#x3D;  indexList.toArray(new String[indexList.size()]);</span><br></pre></td></tr></table></figure><h2 id="方法合集"><a href="#方法合集" class="headerlink" title="方法合集"></a>方法合集</h2><p><strong>queue</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">peek()&#x2F;&#x2F;返回第一个元素</span><br><span class="line">poll()&#x2F;&#x2F;返回第一个元素，并在queue删除</span><br><span class="line">isEmpty()add()remove()size()</span><br></pre></td></tr></table></figure><p><strong>ArrayList</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">size().get(int index).add(element)</span><br><span class="line">isEmpty()toString()remove(int index)remove(Object o)</span><br></pre></td></tr></table></figure><p><strong>String</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.charAt(int i) .indexOf(&quot;object&quot;) .split(&quot;,&quot;) .length()</span><br><span class="line">.substring() .equals().trim()</span><br></pre></td></tr></table></figure><p><strong>System.arraycopy()</strong><br><a href="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" target="_blank" rel="noopener">https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png</a></p><h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><strong>keySet</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(String key:map.keySet())&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>entrySet():lterator</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it&#x3D;map.entrySet().iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">Map.Entry&lt;String,String&gt; entry&#x3D;it.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>Map.entry&lt;&gt;</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">    &#x2F;&#x2F; entry.getKey()  entry.getValue()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p><strong>map.values</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(String item: map.values())</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> algorithm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ElasticSearch入门（1）</title>
       <link href="2020/09/14/Es/ElasticSearch-1/"/>
       <url>2020/09/14/Es/ElasticSearch-1/</url>
@@ -169,31 +194,6 @@
     
     
     <entry>
-      <title>book</title>
-      <link href="2020/07/13/book/book/"/>
-      <url>2020/07/13/book/book/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> book </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> book </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>shell</title>
       <link href="2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/"/>
       <url>2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/</url>
@@ -211,6 +211,31 @@
         <tags>
             
             <tag> shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>book</title>
+      <link href="2020/07/13/book/book/"/>
+      <url>2020/07/13/book/book/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> book </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> book </tag>
             
         </tags>
       
@@ -273,8 +298,8 @@
     
     <entry>
       <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
+      <link href="tags/index.html"/>
+      <url>tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -284,8 +309,8 @@
     
     <entry>
       <title>categories</title>
-      <link href="tags/index.html"/>
-      <url>tags/index.html</url>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
