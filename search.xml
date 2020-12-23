@@ -1,321 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>算法基本方法总结</title>
-      <link href="2020/09/17/leetcode/algorithm-1/"/>
-      <url>2020/09/17/leetcode/algorithm-1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=573131630&auto=1&height=66"></iframe><h2 id="基本常识"><a href="#基本常识" class="headerlink" title="基本常识"></a>基本常识</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int [] arr &#x3D; new int[10];  &#x2F;&#x2F;定义数组</span><br><span class="line">int [][]arr2 &#x3D; new int [2][2];</span><br><span class="line">int rows &#x3D; arr.length; &#x2F;&#x2F;行数,length没有()</span><br><span class="line">int columns &#x3D; arr[0].length&#x2F;&#x2F;列数</span><br></pre></td></tr></table></figure><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><strong>String</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; String to Array</span><br><span class="line">String s1 &#x3D; &quot;a,b,c&quot;;</span><br><span class="line">String [] strArr1 &#x3D; s1.split(&quot;,&quot;);</span><br><span class="line">String s2 &#x3D; &quot;abc&quot;</span><br><span class="line">String [] strArr2 &#x3D; s2.toCharArray()</span><br><span class="line">&#x2F;&#x2F; String to Int</span><br><span class="line">String s3 &#x3D; String.valueOf(123)</span><br><span class="line">int num1&#x3D; Integer.parseInt(s3)</span><br></pre></td></tr></table></figure><p><strong>Array</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int [] arr &#x3D; &#123;1,2,3&#125;</span><br><span class="line">list &#x3D; Arrays.asList(array)</span><br><span class="line">int [] arr &#x3D; list.toArray()</span><br><span class="line">&#x2F;&#x2F;List to Array</span><br><span class="line">&#x2F;&#x2F; List initalization</span><br><span class="line">List&lt;String&gt; list &#x3D; Arrays.asList(&quot;abc&quot;,&quot;cde&quot;);</span><br><span class="line">String [] indexArr &#x3D;  indexList.toArray(new String[indexList.size()]);</span><br></pre></td></tr></table></figure><h2 id="方法合集"><a href="#方法合集" class="headerlink" title="方法合集"></a>方法合集</h2><p><strong>queue</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">peek()&#x2F;&#x2F;返回第一个元素</span><br><span class="line">poll()&#x2F;&#x2F;返回第一个元素，并在queue删除</span><br><span class="line">isEmpty()add()remove()size()</span><br></pre></td></tr></table></figure><p><strong>ArrayList</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">size().get(int index).add(element)</span><br><span class="line">isEmpty()toString()remove(int index)remove(Object o)</span><br></pre></td></tr></table></figure><p><strong>String</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.charAt(int i) .indexOf(&quot;object&quot;) .split(&quot;,&quot;) .length()</span><br><span class="line">.substring() .equals().trim()</span><br></pre></td></tr></table></figure><p><strong>System.arraycopy()</strong></p><p><img src= "/img/loading.gif" data-src="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" alt=""></p><h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><strong>keySet</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(String key:map.keySet())&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>entrySet():lterator</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it&#x3D;map.entrySet().iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">Map.Entry&lt;String,String&gt; entry&#x3D;it.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>Map.entry&lt;&gt;</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">    &#x2F;&#x2F; entry.getKey()  entry.getValue()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p><strong>map.values</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(String item: map.values())</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>夏天</title>
+    <url>/2020/07/05/summer/</url>
+    <content><![CDATA[<p>  夏天的风很自由。</p>
+]]></content>
       <categories>
-          
-          <category> leetcode </category>
-          
+        <category>young</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> algorithm </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ElasticSearch入门（1）</title>
-      <link href="2020/09/14/Es/ElasticSearch-1/"/>
-      <url>2020/09/14/Es/ElasticSearch-1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe><h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><pre><code>这里选择rpm包安装es, rpm -ivh elasticsearch.rpm 文件存在于/usr/share/配置文件存在/etc/elasticsearch/elasticsearch.yml端口9200通过systemctl start elasticsearch启动，status,stop 查看状态与停止elasticsearch.yml          es的相关配置，此处需要将network.host设置为0.0.0.0jvm.options                jvm的相关参数log4j2.properties          日志相关的配置cluster.name               集群名称，判断是否是同一集群node.name                  节点名称，以此作为集群中不同节点的区分条件network.host/http.port     网络地址与端口，用于http和transport服务与使用path.data                  数据的存储地址path.log                   日志的地址</code></pre><p><strong>Development与Production模式说明</strong></p><pre><code>以transport的地址是否绑定在localhost为判断标准network.hostDevelopment模式下启动以warning的方式提示配置检查异常Production模式下在启动时会以error的方式提示配置检查异常修改参数的第二种方式bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol><li><p>ES本地启动集群方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;elasticsearch</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;8200 -Epath.data&#x3D;node2</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;9200 -Epath.data&#x3D;node3</span><br><span class="line">ip:port&#x2F;_cluster&#x2F;stats更多集群相关信息</span><br><span class="line">ip:port&#x2F;_cat&#x2F;nodes节点相关信息，是否组成集群，*表示主节点</span><br></pre></td></tr></table></figure></li><li><p>index</p><p> index由具有相同字段的列表组成，相当于mysql的table,6.0后type _doc不再起作用</p><p> document 文档，每个文档具有唯一的id标识，自行指定或者es生成</p></li></ol><h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><p>目录页对应正排索引，索引页对应倒排索引</p><p>正排索引：文档ID到文档内容，单词的关联关系</p><p>倒排索引：单词到文档ID的关联关系</p><p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/09/14/vUZwgH8DJiM3kcp.png" alt="image.png"></p><p>倒排索引是搜索引擎的核心，主要包含：单词词典与倒排列表</p><p>es存储的每个字段都有自己的倒排索引</p><h2 id="索引API"><a href="#索引API" class="headerlink" title="索引API"></a>索引API</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PUT &#x2F;test_index创建索引</span><br><span class="line">GET _cat&#x2F;indices   查看现有的索引</span><br><span class="line">DELETE  &#x2F;test_index删除索引</span><br><span class="line">GET &#x2F;test_index查看当前索引信息</span><br></pre></td></tr></table></figure><h2 id="文档的创建"><a href="#文档的创建" class="headerlink" title="文档的创建"></a>文档的创建</h2><ol><li><p>单条文档插入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1 单条数据的插入格式：&#x2F;index&#x2F;type&#x2F;id</span><br><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;&#125;</span><br></pre></td></tr></table></figure></li><li><p>批量文档的插入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST test_index&#x2F;_bulk</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;yun&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;,&quot;age&quot;:18&#125;</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;Python Engineer&quot;,&quot;age&quot;:20&#125;</span><br></pre></td></tr></table></figure></li></ol><h2 id="文档的查询"><a href="#文档的查询" class="headerlink" title="文档的查询"></a>文档的查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET&#x2F;test_index&#x2F;_doc&#x2F;1查询单条id&#x3D;1,存储在source里面的完整文档信息</span><br><span class="line">GET&#x2F;test_index&#x2F;_doc&#x2F;_search  query查询，term单词匹配username&#x3D;crush</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br><span class="line">GET &#x2F;test_index&#x2F;_mget查询id是1,2的文档</span><br><span class="line">&#123;&quot;docs&quot;:[&#123;&quot;_id&quot;:&quot;1&quot;,&quot;_id&quot;:&quot;2&quot;&#125;]&#125;</span><br></pre></td></tr></table></figure><h2 id="Search-API"><a href="#Search-API" class="headerlink" title="Search API"></a>Search API</h2><p>对es里面存储的数据进行查询分析，endpoint为_search</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET&#x2F;_search</span><br><span class="line">GET&#x2F;test_index&#x2F;_search</span><br><span class="line">GET&#x2F;test1_index,test2_index&#x2F;_search</span><br><span class="line">GET    &#x2F;test*&#x2F;_search每次可以查询多个索引</span><br></pre></td></tr></table></figure><h3 id="URL-Search与Request-Body-Search"><a href="#URL-Search与Request-Body-Search" class="headerlink" title="URL Search与Request Body Search"></a>URL Search与Request Body Search</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># url search</span><br><span class="line">GET &#x2F;my_index&#x2F;_search?q&#x3D;crush&amp;df&#x3D;user&amp;sort&#x3D;age:asc&amp;from&#x3D;4&amp;size&#x3D;10&amp;timeout&#x3D;15</span><br></pre></td></tr></table></figure><p> q指定查询的语句,df或者default，不指定默认查询，es会查询所有字段,from size用于分页，返回5-14个文档</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># request body search</span><br><span class="line">GET&#x2F;my_index&#x2F;_doc&#x2F;_search</span><br><span class="line">&#123;</span><br><span class="line">&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;user&quot;:&quot;crush&quot;&#125;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="QueryDSL查询"><a href="#QueryDSL查询" class="headerlink" title="QueryDSL查询"></a>QueryDSL查询</h3><p>字段类查询: 全文匹配、match、match_phrase等query,单词匹配：term、terms、range等query</p><p><strong>match Query</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GETtest_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># operator and</span><br><span class="line">GET test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&#123;&quot;query&quot;:&quot;yun crush&quot;,&quot;operator&quot;:&quot;and&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#最小匹配字段数</span><br><span class="line">GETtest_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;job&quot;:&#123;&quot;query&quot;:&quot;java python Engineer&quot;,&quot;minium_should_match&quot;:&quot;2&quot;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> ES6 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>vim基本使用</title>
-      <link href="2020/09/13/linux/vim-1/"/>
-      <url>2020/09/13/linux/vim-1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1424018194&auto=1&height=66"></iframe><h2 id="三种模式转换"><a href="#三种模式转换" class="headerlink" title="三种模式转换"></a>三种模式转换</h2><p>命令模式：移动光标、删除  输入: / ?进入命令行模式 输入aiorAIOR进入插入模式</p><p>插入模式：输入文本 按ESC进入命令模式</p><p>命令行模式：搜索保存退出  按Esc进入模式</p><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ol><li><p>移动光标<br>h,j,k,l分别代表左下上右，可以加入数字控制位置,10j,向下移动10行<br>0:移动到当前行首  $:移动前行尾<br>G:移动到文件的最后一行,nG:移动到n行，gg移动到第一行<br>n<Enter> 向下移动n行</p></li><li><p>编辑<br>x:向后删除一个字符    X:向前删除一个字符<br>nx:向后删除n个字符<br>dd:删除一行            ndd:向下删除n行<br>u:撤销前一个操作</p></li><li><p>查找与替换<br> /word: 向后查找word单词，可以是正则表达式</p><p> ?word:向前查找word</p><p> :%s/word1/word2[gc]:将word1替换成word2，g全局，gc替换时确认,%整个文本替换</p><h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><p> i,I:进入插入模式，前者在当前位置插入，后者为当前行第一个非空白字符</p><p> o,O:前者在当前行的后面插入新行，后者在当前行的前面插入新行</p><p> r,R:前者替换光标所在的字符，后者从当前位置开始替换，直到按下Esc为止</p><h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><p> :进入命令行模式<br> :q :没有修改文件时推出</p><p> :q!:修改了文件，但不保存文件退出</p><p> :w:保存文件</p><p> :w [文件名]: 另存为一个新文件，当前文件没有保存</p><p> :w!:强制保存</p><p> :x:保存并退出</p><p> :x!:强制保存退出</p><p> :ZZ:有修改保存退出，没有修改直接退出</p><p> :set nu:显示行号</p></li></ol>]]></content>
-      
-      
+      <tags>
+        <tag>枯木逢春夏秋冬</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>book</title>
+    <url>/2020/07/13/book/book/</url>
+    <content><![CDATA[]]></content>
       <categories>
-          
-          <category> linux </category>
-          
+        <category>book</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> vim </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python语法</title>
-      <link href="2020/09/13/python/python-1/"/>
-      <url>2020/09/13/python/python-1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>### 基础语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()#首字母大写</span><br><span class="line">name.upper()#转大写</span><br><span class="line">name.lower()#转小写</span><br><span class="line">name.strip()#取出空格</span><br></pre></td></tr></table></figure>### 数组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])   #取最后一个元素</span><br><span class="line">print(a[:-1])  #除了最后一个全部取出</span><br><span class="line">print(a[::-1]) #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure><h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure><h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure><h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>book</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法基本方法总结</title>
+    <url>/2020/09/17/leetcode/algorithm-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=573131630&auto=1&height=66"></iframe>
+
+<h2 id="基本常识"><a href="#基本常识" class="headerlink" title="基本常识"></a>基本常识</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int [] arr &#x3D; new int[10];				  &#x2F;&#x2F;定义数组</span><br><span class="line">int [][]arr2 &#x3D; new int [2][2];</span><br><span class="line">int rows &#x3D; arr.length;					 &#x2F;&#x2F;行数,length没有()</span><br><span class="line">int columns &#x3D; arr[0].length				&#x2F;&#x2F;列数</span><br></pre></td></tr></table></figure>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><strong>String</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; String to Array</span><br><span class="line">String s1 &#x3D; &quot;a,b,c&quot;;</span><br><span class="line">String [] strArr1 &#x3D; s1.split(&quot;,&quot;);</span><br><span class="line">String s2 &#x3D; &quot;abc&quot;</span><br><span class="line">String [] strArr2 &#x3D; s2.toCharArray()</span><br><span class="line">&#x2F;&#x2F; String to Int</span><br><span class="line">String s3 &#x3D; String.valueOf(123)</span><br><span class="line">int num1&#x3D; Integer.parseInt(s3)</span><br></pre></td></tr></table></figure>
+<p><strong>Array</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int [] arr &#x3D; &#123;1,2,3&#125;</span><br><span class="line">list &#x3D; Arrays.asList(array)</span><br><span class="line">int [] arr &#x3D; list.toArray()</span><br><span class="line">&#x2F;&#x2F;List to Array</span><br><span class="line">&#x2F;&#x2F; List initalization</span><br><span class="line">List&lt;String&gt; list &#x3D; Arrays.asList(&quot;abc&quot;,&quot;cde&quot;);</span><br><span class="line">String [] indexArr &#x3D;  indexList.toArray(new String[indexList.size()]);</span><br></pre></td></tr></table></figure>
+<h2 id="方法合集"><a href="#方法合集" class="headerlink" title="方法合集"></a>方法合集</h2><p><strong>queue</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">peek()			&#x2F;&#x2F;	返回第一个元素</span><br><span class="line">poll()			&#x2F;&#x2F;返回第一个元素，并在queue删除</span><br><span class="line">isEmpty()	add()	remove()	size()</span><br></pre></td></tr></table></figure>
+<p><strong>ArrayList</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">size()	.get(int index)		.add(element)</span><br><span class="line">isEmpty()	toString()	remove(int index)	remove(Object o)</span><br></pre></td></tr></table></figure>
+<p><strong>String</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str.charAt(int i) .indexOf(&quot;object&quot;) .split(&quot;,&quot;) .length()</span><br><span class="line">.substring() .equals()	.trim()</span><br></pre></td></tr></table></figure>
+<p><strong>System.arraycopy()</strong></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" alt=""></p>
+<h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><strong>keySet</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String key:map.keySet())&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>entrySet():lterator</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it&#x3D;map.entrySet().iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">Map.Entry&lt;String,String&gt; entry&#x3D;it.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Map.entry&lt;&gt;</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">    &#x2F;&#x2F; entry.getKey()  entry.getValue()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>map.values</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String item: map.values())</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> python </category>
-          
+        <category>leetcode</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>docker与Mongodb的安装</title>
-      <link href="2020/09/13/mongodb/mongodb-1/"/>
-      <url>2020/09/13/mongodb/mongodb-1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1449116345&auto=1&height=66"></iframe><h2 id="Docker与Mongodb"><a href="#Docker与Mongodb" class="headerlink" title="Docker与Mongodb"></a>Docker与Mongodb</h2><ol><li>安装、启动docker <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y update</span><br><span class="line">sudo yum -y install epel-release</span><br><span class="line">sudo yum -y install docker-io</span><br><span class="line">systemclt start docker       //启动docker</span><br><span class="line">docker  version//查看docker版本</span><br></pre></td></tr></table></figure></li><li>docker的常用命令 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps //查看docker容器id</span><br><span class="line">docker images//查看本地镜像</span><br><span class="line">docker ps -a//显示所有容器,-aq只显示id</span><br></pre></td></tr></table></figure></li><li>docker安装Mongodb 4.0 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker pull mongo:4   //拉取mongodb4.0镜像</span><br><span class="line">docker images//查看是否有Mongodb镜像</span><br><span class="line">//启动mongodb 端口号27017  进程name mongo</span><br><span class="line">docker run -itd --name mongo -p 27017:27017 mongo:4  //mongodb 4.0版本</span><br><span class="line">docker run -itd --name mongo -p 27017:27017 mongo:latest //最新版本</span><br><span class="line">//验证是否启动成功</span><br><span class="line">docker exec -it mongo mongo</span><br></pre></td></tr></table></figure></li><li>docker移除镜像与容器 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line">docker rmi &lt;image id&gt;   &#x2F;&#x2F;强制删除指定id的image</span><br><span class="line">docker rmi $(docker iamges -q)  &#x2F;&#x2F;删除所有images</span><br><span class="line">docker stop container-id   &#x2F;&#x2F;停止该id的容器</span><br><span class="line">docker rm container-id   &#x2F;&#x2F;移除该id的容器</span><br><span class="line">docker stop $(docker ps -aq)   &#x2F;&#x2F;停止所有的容器</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-      
-      
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ElasticSearch入门（1）</title>
+    <url>/2020/09/14/Es/ElasticSearch-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe>
+
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><pre><code>这里选择rpm包安装es, rpm -ivh elasticsearch.rpm 文件存在于/usr/share/
+配置文件存在/etc/elasticsearch/elasticsearch.yml
+端口9200
+通过systemctl start elasticsearch启动，status,stop 查看状态与停止
+elasticsearch.yml          es的相关配置，此处需要将network.host设置为0.0.0.0
+jvm.options                jvm的相关参数
+log4j2.properties          日志相关的配置
+cluster.name               集群名称，判断是否是同一集群
+node.name                  节点名称，以此作为集群中不同节点的区分条件
+network.host/http.port     网络地址与端口，用于http和transport服务与使用
+path.data                  数据的存储地址
+path.log                   日志的地址</code></pre><p><strong>Development与Production模式说明</strong></p>
+<pre><code>以transport的地址是否绑定在localhost为判断标准network.host
+Development模式下启动以warning的方式提示配置检查异常
+Production模式下在启动时会以error的方式提示配置检查异常
+修改参数的第二种方式
+bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol>
+<li><p>ES本地启动集群方式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bin&#x2F;elasticsearch</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;8200 -Epath.data&#x3D;node2</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;9200 -Epath.data&#x3D;node3</span><br><span class="line">ip:port&#x2F;_cluster&#x2F;stats		更多集群相关信息</span><br><span class="line">ip:port&#x2F;_cat&#x2F;nodes			节点相关信息，是否组成集群，*表示主节点</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>index</p>
+<p> index由具有相同字段的列表组成，相当于mysql的table,6.0后type _doc不再起作用</p>
+<p> document 文档，每个文档具有唯一的id标识，自行指定或者es生成</p>
+</li>
+</ol>
+<h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><p>目录页对应正排索引，索引页对应倒排索引</p>
+<p>正排索引：文档ID到文档内容，单词的关联关系</p>
+<p>倒排索引：单词到文档ID的关联关系</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/09/14/vUZwgH8DJiM3kcp.png" alt="image.png"></p>
+<p>倒排索引是搜索引擎的核心，主要包含：单词词典与倒排列表</p>
+<p>es存储的每个字段都有自己的倒排索引</p>
+<h2 id="索引API"><a href="#索引API" class="headerlink" title="索引API"></a>索引API</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PUT 		&#x2F;test_index				创建索引</span><br><span class="line">GET 		_cat&#x2F;indices			   查看现有的索引</span><br><span class="line">DELETE  	&#x2F;test_index				删除索引</span><br><span class="line">GET 		&#x2F;test_index				查看当前索引信息</span><br></pre></td></tr></table></figure>
+<h2 id="文档的创建"><a href="#文档的创建" class="headerlink" title="文档的创建"></a>文档的创建</h2><ol>
+<li><p>单条文档插入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1				 单条数据的插入格式：&#x2F;index&#x2F;type&#x2F;id</span><br><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>批量文档的插入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">POST test_index&#x2F;_bulk</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;yun&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;,&quot;age&quot;:18&#125;</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;Python Engineer&quot;,&quot;age&quot;:20&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="文档的查询"><a href="#文档的查询" class="headerlink" title="文档的查询"></a>文档的查询</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET	&#x2F;test_index&#x2F;_doc&#x2F;1				查询单条id&#x3D;1,存储在source里面的完整文档信息</span><br><span class="line">GET	&#x2F;test_index&#x2F;_doc&#x2F;_search		  query查询，term单词匹配username&#x3D;crush</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br><span class="line">GET &#x2F;test_index&#x2F;_mget					查询id是1,2的文档</span><br><span class="line">&#123;&quot;docs&quot;:[&#123;&quot;_id&quot;:&quot;1&quot;,&quot;_id&quot;:&quot;2&quot;&#125;]&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Search-API"><a href="#Search-API" class="headerlink" title="Search API"></a>Search API</h2><p>对es里面存储的数据进行查询分析，endpoint为_search</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET		&#x2F;_search</span><br><span class="line">GET		&#x2F;test_index&#x2F;_search</span><br><span class="line">GET		&#x2F;test1_index,test2_index&#x2F;_search</span><br><span class="line">GET 	   &#x2F;test*&#x2F;_search					每次可以查询多个索引</span><br></pre></td></tr></table></figure>
+<h3 id="URL-Search与Request-Body-Search"><a href="#URL-Search与Request-Body-Search" class="headerlink" title="URL Search与Request Body Search"></a>URL Search与Request Body Search</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># url search</span><br><span class="line">GET &#x2F;my_index&#x2F;_search?q&#x3D;crush&amp;df&#x3D;user&amp;sort&#x3D;age:asc&amp;from&#x3D;4&amp;size&#x3D;10&amp;timeout&#x3D;15</span><br></pre></td></tr></table></figure>
+<p> q指定查询的语句,df或者default，不指定默认查询，es会查询所有字段,from size用于分页，返回5-14个文档</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># request body search</span><br><span class="line">GET	&#x2F;my_index&#x2F;_doc&#x2F;_search</span><br><span class="line">&#123;</span><br><span class="line">&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;user&quot;:&quot;crush&quot;&#125;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="QueryDSL查询"><a href="#QueryDSL查询" class="headerlink" title="QueryDSL查询"></a>QueryDSL查询</h3><p>字段类查询: 全文匹配、match、match_phrase等query,单词匹配：term、terms、range等query</p>
+<p><strong>match Query</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET	test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># operator and</span><br><span class="line">GET test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&#123;&quot;query&quot;:&quot;yun crush&quot;,&quot;operator&quot;:&quot;and&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#最小匹配字段数</span><br><span class="line">GET		test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;job&quot;:&#123;&quot;query&quot;:&quot;java python Engineer&quot;,&quot;minium_should_match&quot;:&quot;2&quot;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>防火墙常用命令</title>
+    <url>/2020/07/13/linux/firewall/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe>
+
+<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p><strong>系统centos7</strong></p>
+<p>Centos7默认的防火墙不是iptables而是firewall</p>
+<p>查看防火墙状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<p>开启/关闭防火墙</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start firewalld</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+<p>禁止开机启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+<p>查看开放的端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+<p>监听端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -lnp | grep 8080</span><br></pre></td></tr></table></figure>
+<p>开放/关闭端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;80&#x2F;tcp --permanent      &#x2F;&#x2F;开放端口--permanent重启不会丢失</span><br><span class="line">firewall-cmd --remove-port&#x3D;9999&#x2F;tcp --permanent &#x2F;&#x2F;关闭端口</span><br></pre></td></tr></table></figure>
+<p>重启防火墙</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload      &#x2F;&#x2F;开放，关闭端口都需要重启防火墙</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> Nosql </category>
-          
+        <category>linux</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> mongodb </tag>
-            
-            <tag> docker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>linux常用指令</title>
-      <link href="2020/09/12/linux/linux-1/"/>
-      <url>2020/09/12/linux/linux-1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe><h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">uname --help//显示帮助</span><br><span class="line">uname -v//输出内核版本信息</span><br><span class="line">uname --version//显示版本信息并退出</span><br><span class="line">who am i//等于who -m 登陆用户的信息</span><br><span class="line">who//查询当前登录在系统上的用户信息</span><br><span class="line"><span class="meta">#</span><span class="bash">//root登陆具有所有权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">//普通用户没什么权限</span></span><br></pre></td></tr></table></figure><h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p><strong>windows本地安装git bash使用</strong></p><p><em>1.从远处(服务器)复制文件到本地目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp/test.md ./</span></span><br></pre></td></tr></table></figure><p><em>2.从远处(服务器)复制目录到本地目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp ./</span></span><br></pre></td></tr></table></figure><p><em>3.上传本地文件到服务器指定目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/test.tar root@192.168.45.129:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure><p><em>4.上传本地目录到服务器指定目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/soft/text root@192.168.45.12:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure><p><em>5.windows文件传输到服务器</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>firewall</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>two-sum</title>
+    <url>/2020/07/13/leetcode/twoSum/</url>
+    <content><![CDATA[<p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p>
+</blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
       <categories>
-          
-          <category> linux </category>
-          
+        <category>leetcode</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>two-sum</title>
-      <link href="2020/07/13/leetcode/twoSum/"/>
-      <url>2020/07/13/leetcode/twoSum/</url>
-      
-        <content type="html"><![CDATA[<p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p><blockquote><p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p></blockquote><p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux常用指令</title>
+    <url>/2020/09/12/linux/linux-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe>
+
+<h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">uname --help					//显示帮助</span><br><span class="line">uname -v					//输出内核版本信息</span><br><span class="line">uname --version					//显示版本信息并退出</span><br><span class="line">who am i					//等于who -m 登陆用户的信息</span><br><span class="line">who						//查询当前登录在系统上的用户信息</span><br><span class="line"><span class="meta">#</span><span class="bash">						//root登陆具有所有权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">						//普通用户没什么权限</span></span><br></pre></td></tr></table></figure>
+<h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p><strong>windows本地安装git bash使用</strong></p>
+<p><em>1.从远处(服务器)复制文件到本地目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp/test.md ./</span></span><br></pre></td></tr></table></figure>
+<p><em>2.从远处(服务器)复制目录到本地目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp ./</span></span><br></pre></td></tr></table></figure>
+<p><em>3.上传本地文件到服务器指定目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/test.tar root@192.168.45.129:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
+<p><em>4.上传本地目录到服务器指定目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/soft/text root@192.168.45.12:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
+<p><em>5.windows文件传输到服务器</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
       <categories>
-          
-          <category> leetcode </category>
-          
+        <category>linux</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> algorithm </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>防火墙常用命令</title>
-      <link href="2020/07/13/linux/firewall/"/>
-      <url>2020/07/13/linux/firewall/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe><h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p><strong>系统centos7</strong></p><p>Centos7默认的防火墙不是iptables而是firewall</p><p>查看防火墙状态</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure><p>开启/关闭防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure><p>禁止开机启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure><p>查看开放的端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure><p>监听端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep 8080</span><br></pre></td></tr></table></figure><p>开放/关闭端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;80&#x2F;tcp --permanent      &#x2F;&#x2F;开放端口--permanent重启不会丢失</span><br><span class="line">firewall-cmd --remove-port&#x3D;9999&#x2F;tcp --permanent &#x2F;&#x2F;关闭端口</span><br></pre></td></tr></table></figure><p>重启防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload      &#x2F;&#x2F;开放，关闭端口都需要重启防火墙</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim基本使用</title>
+    <url>/2020/09/13/linux/vim-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1424018194&auto=1&height=66"></iframe>
+
+<h2 id="三种模式转换"><a href="#三种模式转换" class="headerlink" title="三种模式转换"></a>三种模式转换</h2><p>命令模式：移动光标、删除  输入: / ?进入命令行模式 输入aiorAIOR进入插入模式</p>
+<p>插入模式：输入文本 按ESC进入命令模式</p>
+<p>命令行模式：搜索保存退出  按Esc进入模式</p>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ol>
+<li><p>移动光标<br>h,j,k,l分别代表左下上右，可以加入数字控制位置,10j,向下移动10行<br>0:移动到当前行首  $:移动前行尾<br>G:移动到文件的最后一行,nG:移动到n行，gg移动到第一行<br>n<Enter> 向下移动n行</p>
+</li>
+<li><p>编辑<br>x:向后删除一个字符    X:向前删除一个字符<br>nx:向后删除n个字符<br>dd:删除一行            ndd:向下删除n行<br>u:撤销前一个操作</p>
+</li>
+<li><p>查找与替换<br> /word: 向后查找word单词，可以是正则表达式</p>
+<p> ?word:向前查找word</p>
+<p> :%s/word1/word2[gc]:将word1替换成word2，g全局，gc替换时确认,%整个文本替换</p>
+<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><p> i,I:进入插入模式，前者在当前位置插入，后者为当前行第一个非空白字符</p>
+<p> o,O:前者在当前行的后面插入新行，后者在当前行的前面插入新行</p>
+<p> r,R:前者替换光标所在的字符，后者从当前位置开始替换，直到按下Esc为止</p>
+<h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><p> :进入命令行模式<br> :q :没有修改文件时推出</p>
+<p> :q!:修改了文件，但不保存文件退出</p>
+<p> :w:保存文件</p>
+<p> :w [文件名]: 另存为一个新文件，当前文件没有保存</p>
+<p> :w!:强制保存</p>
+<p> :x:保存并退出</p>
+<p> :x!:强制保存退出</p>
+<p> :ZZ:有修改保存退出，没有修改直接退出</p>
+<p> :set nu:显示行号</p>
+</li>
+</ol>
+]]></content>
       <categories>
-          
-          <category> linux </category>
-          
+        <category>linux</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> firewall </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>book</title>
-      <link href="2020/07/13/book/book/"/>
-      <url>2020/07/13/book/book/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python语法</title>
+    <url>/2020/09/13/python/python-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>
+### 基础语法
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()		#首字母大写</span><br><span class="line">name.upper()		#转大写</span><br><span class="line">name.lower()		#转小写</span><br><span class="line">name.strip()		#取出空格</span><br></pre></td></tr></table></figure>
+### 数组
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])			   #取最后一个元素</span><br><span class="line">print(a[:-1])			  #除了最后一个全部取出</span><br><span class="line">print(a[::-1])			 #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])			#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure>
+
+<h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure>
+<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> book </category>
-          
+        <category>python</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> book </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>多线程</title>
-      <link href="2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-      <url>2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
+  </entry>
+  <entry>
+    <title>docker与Mongodb的安装</title>
+    <url>/2020/09/13/mongodb/mongodb-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1449116345&auto=1&height=66"></iframe>
+
+<h2 id="Docker与Mongodb"><a href="#Docker与Mongodb" class="headerlink" title="Docker与Mongodb"></a>Docker与Mongodb</h2><ol>
+<li>安装、启动docker <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum -y update</span><br><span class="line">sudo yum -y install epel-release</span><br><span class="line">sudo yum -y install docker-io</span><br><span class="line">systemclt start docker					       //启动docker</span><br><span class="line">docker  version							//查看docker版本</span><br></pre></td></tr></table></figure></li>
+<li>docker的常用命令 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker ps					 //查看docker容器id</span><br><span class="line">docker images				//查看本地镜像</span><br><span class="line">docker ps -a				//显示所有容器,-aq只显示id</span><br></pre></td></tr></table></figure></li>
+<li>docker安装Mongodb 4.0 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull mongo:4		   //拉取mongodb4.0镜像</span><br><span class="line">docker images					//查看是否有Mongodb镜像</span><br><span class="line">//启动mongodb 端口号27017  进程name mongo</span><br><span class="line">docker run -itd --name mongo -p 27017:27017 mongo:4	  //mongodb 4.0版本</span><br><span class="line">docker run -itd --name mongo -p 27017:27017 mongo:latest //最新版本</span><br><span class="line">//验证是否启动成功</span><br><span class="line">docker exec -it mongo mongo</span><br></pre></td></tr></table></figure></li>
+<li>docker移除镜像与容器 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker images</span><br><span class="line">docker rmi &lt;image id&gt;   			&#x2F;&#x2F;强制删除指定id的image</span><br><span class="line">docker rmi $(docker iamges -q)			 	 &#x2F;&#x2F;删除所有images</span><br><span class="line">docker stop container-id				   &#x2F;&#x2F;停止该id的容器</span><br><span class="line">docker rm container-id 					  &#x2F;&#x2F;移除该id的容器</span><br><span class="line">docker stop $(docker ps -aq)				   &#x2F;&#x2F;停止所有的容器</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+]]></content>
       <categories>
-          
-          <category> thread </category>
-          
+        <category>Nosql</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 多线程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>shell</title>
-      <link href="2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/"/>
-      <url>2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
+      <tags>
+        <tag>mongodb</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shell</title>
+    <url>/2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
       <categories>
-          
-          <category> linux </category>
-          
+        <category>linux</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> shell </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>夏天</title>
-      <link href="2020/07/05/summer/"/>
-      <url>2020/07/05/summer/</url>
-      
-        <content type="html"><![CDATA[<p>  夏天的风很自由。</p>]]></content>
-      
-      
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多线程</title>
+    <url>/2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
       <categories>
-          
-          <category> young </category>
-          
+        <category>thread</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 枯木逢春夏秋冬 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="tags/index.html"/>
-      <url>tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-  
+      <tags>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
 </search>
