@@ -24,39 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>算法基本方法总结</title>
-    <url>/2020/09/17/leetcode/algorithm-1/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=573131630&auto=1&height=66"></iframe>
-
-<h2 id="基本常识"><a href="#基本常识" class="headerlink" title="基本常识"></a>基本常识</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int [] arr &#x3D; new int[10];				  &#x2F;&#x2F;定义数组</span><br><span class="line">int [][]arr2 &#x3D; new int [2][2];</span><br><span class="line">int rows &#x3D; arr.length;					 &#x2F;&#x2F;行数,length没有()</span><br><span class="line">int columns &#x3D; arr[0].length				&#x2F;&#x2F;列数</span><br></pre></td></tr></table></figure>
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><strong>String</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; String to Array</span><br><span class="line">String s1 &#x3D; &quot;a,b,c&quot;;</span><br><span class="line">String [] strArr1 &#x3D; s1.split(&quot;,&quot;);</span><br><span class="line">String s2 &#x3D; &quot;abc&quot;</span><br><span class="line">String [] strArr2 &#x3D; s2.toCharArray()</span><br><span class="line">&#x2F;&#x2F; String to Int</span><br><span class="line">String s3 &#x3D; String.valueOf(123)</span><br><span class="line">int num1&#x3D; Integer.parseInt(s3)</span><br></pre></td></tr></table></figure>
-<p><strong>Array</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int [] arr &#x3D; &#123;1,2,3&#125;</span><br><span class="line">list &#x3D; Arrays.asList(array)</span><br><span class="line">int [] arr &#x3D; list.toArray()</span><br><span class="line">&#x2F;&#x2F;List to Array</span><br><span class="line">&#x2F;&#x2F; List initalization</span><br><span class="line">List&lt;String&gt; list &#x3D; Arrays.asList(&quot;abc&quot;,&quot;cde&quot;);</span><br><span class="line">String [] indexArr &#x3D;  indexList.toArray(new String[indexList.size()]);</span><br></pre></td></tr></table></figure>
-<h2 id="方法合集"><a href="#方法合集" class="headerlink" title="方法合集"></a>方法合集</h2><p><strong>queue</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">peek()			&#x2F;&#x2F;	返回第一个元素</span><br><span class="line">poll()			&#x2F;&#x2F;返回第一个元素，并在queue删除</span><br><span class="line">isEmpty()	add()	remove()	size()</span><br></pre></td></tr></table></figure>
-<p><strong>ArrayList</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">size()	.get(int index)		.add(element)</span><br><span class="line">isEmpty()	toString()	remove(int index)	remove(Object o)</span><br></pre></td></tr></table></figure>
-<p><strong>String</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str.charAt(int i) .indexOf(&quot;object&quot;) .split(&quot;,&quot;) .length()</span><br><span class="line">.substring() .equals()	.trim()</span><br></pre></td></tr></table></figure>
-<p><strong>System.arraycopy()</strong></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" alt=""></p>
-<h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><strong>keySet</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String key:map.keySet())&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>entrySet():lterator</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it&#x3D;map.entrySet().iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">Map.Entry&lt;String,String&gt; entry&#x3D;it.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>Map.entry&lt;&gt;</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">    &#x2F;&#x2F; entry.getKey()  entry.getValue()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>map.values</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String item: map.values())</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ElasticSearch入门（1）</title>
     <url>/2020/09/14/Es/ElasticSearch-1/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe>
@@ -122,6 +89,33 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>linux常用指令</title>
+    <url>/2020/09/12/linux/linux-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe>
+
+<h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">uname --help					//显示帮助</span><br><span class="line">uname -v					//输出内核版本信息</span><br><span class="line">uname --version					//显示版本信息并退出</span><br><span class="line">who am i					//等于who -m 登陆用户的信息</span><br><span class="line">who						//查询当前登录在系统上的用户信息</span><br><span class="line"><span class="meta">#</span><span class="bash">						//root登陆具有所有权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">						//普通用户没什么权限</span></span><br></pre></td></tr></table></figure>
+<h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p><strong>windows本地安装git bash使用</strong></p>
+<p><em>1.从远处(服务器)复制文件到本地目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp/test.md ./</span></span><br></pre></td></tr></table></figure>
+<p><em>2.从远处(服务器)复制目录到本地目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp ./</span></span><br></pre></td></tr></table></figure>
+<p><em>3.上传本地文件到服务器指定目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/test.tar root@192.168.45.129:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
+<p><em>4.上传本地目录到服务器指定目录</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/soft/text root@192.168.45.12:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
+<p><em>5.windows文件传输到服务器</em></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>防火墙常用命令</title>
     <url>/2020/07/13/linux/firewall/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe>
@@ -150,17 +144,31 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>two-sum</title>
-    <url>/2020/07/13/leetcode/twoSum/</url>
-    <content><![CDATA[<p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p>
-<blockquote>
-<p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p>
-</blockquote>
-<p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>算法基本方法总结</title>
+    <url>/2020/09/17/leetcode/algorithm-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=573131630&auto=1&height=66"></iframe>
 
-
-]]></content>
+<h2 id="基本常识"><a href="#基本常识" class="headerlink" title="基本常识"></a>基本常识</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int [] arr &#x3D; new int[10];				  &#x2F;&#x2F;定义数组</span><br><span class="line">int [][]arr2 &#x3D; new int [2][2];</span><br><span class="line">int rows &#x3D; arr.length;					 &#x2F;&#x2F;行数,length没有()</span><br><span class="line">int columns &#x3D; arr[0].length				&#x2F;&#x2F;列数</span><br></pre></td></tr></table></figure>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><strong>String</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; String to Array</span><br><span class="line">String s1 &#x3D; &quot;a,b,c&quot;;</span><br><span class="line">String [] strArr1 &#x3D; s1.split(&quot;,&quot;);</span><br><span class="line">String s2 &#x3D; &quot;abc&quot;</span><br><span class="line">String [] strArr2 &#x3D; s2.toCharArray()</span><br><span class="line">&#x2F;&#x2F; String to Int</span><br><span class="line">String s3 &#x3D; String.valueOf(123)</span><br><span class="line">int num1&#x3D; Integer.parseInt(s3)</span><br></pre></td></tr></table></figure>
+<p><strong>Array</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int [] arr &#x3D; &#123;1,2,3&#125;</span><br><span class="line">list &#x3D; Arrays.asList(array)</span><br><span class="line">int [] arr &#x3D; list.toArray()</span><br><span class="line">&#x2F;&#x2F;List to Array</span><br><span class="line">&#x2F;&#x2F; List initalization</span><br><span class="line">List&lt;String&gt; list &#x3D; Arrays.asList(&quot;abc&quot;,&quot;cde&quot;);</span><br><span class="line">String [] indexArr &#x3D;  indexList.toArray(new String[indexList.size()]);</span><br></pre></td></tr></table></figure>
+<h2 id="方法合集"><a href="#方法合集" class="headerlink" title="方法合集"></a>方法合集</h2><p><strong>queue</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">peek()			&#x2F;&#x2F;	返回第一个元素</span><br><span class="line">poll()			&#x2F;&#x2F;返回第一个元素，并在queue删除</span><br><span class="line">isEmpty()	add()	remove()	size()</span><br></pre></td></tr></table></figure>
+<p><strong>ArrayList</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">size()	.get(int index)		.add(element)</span><br><span class="line">isEmpty()	toString()	remove(int index)	remove(Object o)</span><br></pre></td></tr></table></figure>
+<p><strong>String</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str.charAt(int i) .indexOf(&quot;object&quot;) .split(&quot;,&quot;) .length()</span><br><span class="line">.substring() .equals()	.trim()</span><br></pre></td></tr></table></figure>
+<p><strong>System.arraycopy()</strong></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" alt=""></p>
+<h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><strong>keySet</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String key:map.keySet())&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>entrySet():lterator</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it&#x3D;map.entrySet().iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">Map.Entry&lt;String,String&gt; entry&#x3D;it.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Map.entry&lt;&gt;</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">    &#x2F;&#x2F; entry.getKey()  entry.getValue()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>map.values</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String item: map.values())</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -169,31 +177,20 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>linux常用指令</title>
-    <url>/2020/09/12/linux/linux-1/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe>
+    <title>python语法</title>
+    <url>/2020/09/13/python/python-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>
+### 基础语法
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()		#首字母大写</span><br><span class="line">name.upper()		#转大写</span><br><span class="line">name.lower()		#转小写</span><br><span class="line">name.strip()		#取出空格</span><br></pre></td></tr></table></figure>
+### 数组
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])			   #取最后一个元素</span><br><span class="line">print(a[:-1])			  #除了最后一个全部取出</span><br><span class="line">print(a[::-1])			 #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])			#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure>
 
-<h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">uname --help					//显示帮助</span><br><span class="line">uname -v					//输出内核版本信息</span><br><span class="line">uname --version					//显示版本信息并退出</span><br><span class="line">who am i					//等于who -m 登陆用户的信息</span><br><span class="line">who						//查询当前登录在系统上的用户信息</span><br><span class="line"><span class="meta">#</span><span class="bash">						//root登陆具有所有权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">						//普通用户没什么权限</span></span><br></pre></td></tr></table></figure>
-<h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p><strong>windows本地安装git bash使用</strong></p>
-<p><em>1.从远处(服务器)复制文件到本地目录</em></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp/test.md ./</span></span><br></pre></td></tr></table></figure>
-<p><em>2.从远处(服务器)复制目录到本地目录</em></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp ./</span></span><br></pre></td></tr></table></figure>
-<p><em>3.上传本地文件到服务器指定目录</em></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/test.tar root@192.168.45.129:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
-<p><em>4.上传本地目录到服务器指定目录</em></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/soft/text root@192.168.45.12:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
-<p><em>5.windows文件传输到服务器</em></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
+<h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure>
+<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>linux</category>
+        <category>python</category>
       </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
   </entry>
   <entry>
     <title>vim基本使用</title>
@@ -234,20 +231,15 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>python语法</title>
-    <url>/2020/09/13/python/python-1/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>
-### 基础语法
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()		#首字母大写</span><br><span class="line">name.upper()		#转大写</span><br><span class="line">name.lower()		#转小写</span><br><span class="line">name.strip()		#取出空格</span><br></pre></td></tr></table></figure>
-### 数组
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])			   #取最后一个元素</span><br><span class="line">print(a[:-1])			  #除了最后一个全部取出</span><br><span class="line">print(a[::-1])			 #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])			#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure>
-
-<h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure>
-<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure>
-<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>]]></content>
+    <title>多线程</title>
+    <url>/2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>python</category>
+        <category>thread</category>
       </categories>
+      <tags>
+        <tag>多线程</tag>
+      </tags>
   </entry>
   <entry>
     <title>docker与Mongodb的安装</title>
@@ -284,14 +276,22 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>多线程</title>
-    <url>/2020/07/13/thread/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
+    <title>two-sum</title>
+    <url>/2020/07/13/leetcode/twoSum/</url>
+    <content><![CDATA[<p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p>
+</blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
       <categories>
-        <category>thread</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>多线程</tag>
+        <tag>algorithm</tag>
       </tags>
   </entry>
 </search>
