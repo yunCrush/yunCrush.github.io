@@ -1,109 +1,469 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Crush</title><meta name="description" content="非著名程序员"><meta name="author" content="Crush"><meta name="copyright" content="Crush"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yuncrush.com/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="google-site-verification" content="xldA4sVYh9rlddN7kgRut8WfS2gD8lk2abowEDh6Lng"/><meta name="baidu-site-verification" content="code-kkatL2Xny7.yuncrush.com"/><meta name="360-site-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#9370DB&quot;,&quot;paginator&quot;:&quot;#7A7FF1&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#69c46d&quot;,&quot;link_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><meta property="og:type" content="website"><meta property="og:title" content="Crush"><meta property="og:url" content="http://yuncrush.com/"><meta property="og:site_name" content="Crush"><meta property="og:description" content="非著名程序员"><meta property="og:image" content="http://yuncrush.com/img/avatar.png"><meta property="article:published_time" content="2020-12-27T15:33:39.477Z"><meta property="article:modified_time" content="2020-12-27T15:33:39.477Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
-  }
-}
-var activateLightMode = function () {
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
-  }
-}
+<!DOCTYPE html>
 
-var getCookies = function (name) {
-  const value = `; ${document.cookie}`
-  const parts = value.split(`; ${name}=`)
-  if (parts.length === 2) return parts.pop().split(';').shift()
-}
 
-var autoChangeMode = 'false'
-var t = getCookies('theme')
-if (autoChangeMode === '1') {
-  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-  if (t === undefined) {
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport) {
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour <= 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="非著名程序员">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Crush">
+<meta property="og:url" content="http://yuncrush.com/index.html">
+<meta property="og:site_name" content="Crush">
+<meta property="og:description" content="非著名程序员">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Crush">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-      if (Cookies.get('theme') === undefined) {
-        e.matches ? activateDarkMode() : activateLightMode()
-      }
-    })
-  } else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else if (autoChangeMode === '2') {
-  now = new Date()
-  hour = now.getHours()
-  isNight = hour <= 6 || hour >= 18
-  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else {
-  if (t === 'dark') activateDarkMode()
-  else if (t === 'light') activateLightMode()
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: undefined,
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
-  },
-  runtime_unit: '天',
-  runtime: true,
-  copyright: undefined,
-  ClickShowText: {"text":"yun,Crush,nice,上进,自主,有趣","fontSize":"15px"},
-  medium_zoom: false,
-  fancybox: true,
-  Snackbar: undefined,
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  baiduPush: true,
-  highlightCopy: true,
-  highlightLang: true,
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isanchor: false    
-}</script><script>var GLOBAL_CONFIG_SITE = { 
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isSidebar: false,
-  postUpdate: '2020-12-27 23:33:39'
-}</script><noscript><style>
-#nav {
-  opacity: 1
-}
-.justified-gallery img{
-  opacity: 1
-}
-</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">12</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">11</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="full_page" id="page-header" style="background-image: url(https://i.loli.net/2020/09/10/A9wFKU3VNTJGzXx.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Crush</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Crush</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/yunCrush" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:yunfei1577266641@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://i.loli.net/2020/09/10/f9L2kpgHYMPGAmK.jpg" target="_blank" title="qq"><i class="fab fa-qq"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/17/leetcode/algorithm-1/" title="算法基本方法总结">     <img class="post_bg" data-src="https://i.loli.net/2020/09/13/wHXkA97ue5O8WMp.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法基本方法总结"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/17/leetcode/algorithm-1/" title="算法基本方法总结">算法基本方法总结</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-17 19:04:12"><i class="far fa-calendar-alt"></i>2020-09-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/leetcode/">leetcode</a></span></div><div class="content">
+  };
+</script>
 
-基本常识1234int [] arr &#x3D; new int[10];				  &#x2F;&#x2F;定义数组int [][]arr2 &#x3D; new int [2][2];int rows &#x3D; arr.length;					 &#x2F;&#x2F;行数,length没有()int columns &#x3D; arr[0].length				&#x2F;&#x2F;列数
-类型转换String
-12345678&#x2F;&#x2F; String to ArrayString s1 &#x3D; &quot;a,b,c&quot;;String [] strArr1 &#x3D; s1.split(&quot;,&quot;);String s2 &#x3D; &quot;abc&quot;String [] strArr2 &#x3D; s2.toCharArray()&#x2F;&#x2F; String to IntString s3 &#x3D; String.valueOf(123)int num1&#x3D; Integer.parse ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/14/Es/ElasticSearch-1/" title="ElasticSearch入门（1）">     <img class="post_bg" data-src="https://i.loli.net/2020/09/13/oJ8VNADyQ4msxwW.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ElasticSearch入门（1）"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/14/Es/ElasticSearch-1/" title="ElasticSearch入门（1）">ElasticSearch入门（1）</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-14 18:32:34"><i class="far fa-calendar-alt"></i>2020-09-14</time></div><div class="content">
 
-配置说明这里选择rpm包安装es, rpm -ivh elasticsearch.rpm 文件存在于/usr/share/
+
+  <link rel="canonical" href="http://yuncrush.com/"/>
+
+
+
+
+
+  <title>Crush</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Crush</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/09/17/leetcode/algorithm-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/17/leetcode/algorithm-1/" itemprop="url">算法基本方法总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T19:04:12+08:00">
+                2020-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=573131630&auto=1&height=66"></iframe>
+
+<h2 id="基本常识"><a href="#基本常识" class="headerlink" title="基本常识"></a>基本常识</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int [] arr &#x3D; new int[10];				  &#x2F;&#x2F;定义数组</span><br><span class="line">int [][]arr2 &#x3D; new int [2][2];</span><br><span class="line">int rows &#x3D; arr.length;					 &#x2F;&#x2F;行数,length没有()</span><br><span class="line">int columns &#x3D; arr[0].length				&#x2F;&#x2F;列数</span><br></pre></td></tr></table></figure>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><strong>String</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; String to Array</span><br><span class="line">String s1 &#x3D; &quot;a,b,c&quot;;</span><br><span class="line">String [] strArr1 &#x3D; s1.split(&quot;,&quot;);</span><br><span class="line">String s2 &#x3D; &quot;abc&quot;</span><br><span class="line">String [] strArr2 &#x3D; s2.toCharArray()</span><br><span class="line">&#x2F;&#x2F; String to Int</span><br><span class="line">String s3 &#x3D; String.valueOf(123)</span><br><span class="line">int num1&#x3D; Integer.parseInt(s3)</span><br></pre></td></tr></table></figure>
+<p><strong>Array</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int [] arr &#x3D; &#123;1,2,3&#125;</span><br><span class="line">list &#x3D; Arrays.asList(array)</span><br><span class="line">int [] arr &#x3D; list.toArray()</span><br><span class="line">&#x2F;&#x2F;List to Array</span><br><span class="line">&#x2F;&#x2F; List initalization</span><br><span class="line">List&lt;String&gt; list &#x3D; Arrays.asList(&quot;abc&quot;,&quot;cde&quot;);</span><br><span class="line">String [] indexArr &#x3D;  indexList.toArray(new String[indexList.size()]);</span><br></pre></td></tr></table></figure>
+<h2 id="方法合集"><a href="#方法合集" class="headerlink" title="方法合集"></a>方法合集</h2><p><strong>queue</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">peek()			&#x2F;&#x2F;	返回第一个元素</span><br><span class="line">poll()			&#x2F;&#x2F;返回第一个元素，并在queue删除</span><br><span class="line">isEmpty()	add()	remove()	size()</span><br></pre></td></tr></table></figure>
+<p><strong>ArrayList</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">size()	.get(int index)		.add(element)</span><br><span class="line">isEmpty()	toString()	remove(int index)	remove(Object o)</span><br></pre></td></tr></table></figure>
+<p><strong>String</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.charAt(int i) .indexOf(&quot;object&quot;) .split(&quot;,&quot;) .length()</span><br><span class="line">.substring() .equals()	.trim()</span><br></pre></td></tr></table></figure>
+<p><strong>System.arraycopy()</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" alt=""></p>
+<h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><strong>keySet</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(String key:map.keySet())&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>entrySet():lterator</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it&#x3D;map.entrySet().iterator();</span><br><span class="line">while(it.hasNext())&#123;</span><br><span class="line">Map.Entry&lt;String,String&gt; entry&#x3D;it.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Map.entry&lt;&gt;</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">    &#x2F;&#x2F; entry.getKey()  entry.getValue()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>map.values</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(String item: map.values())</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/09/14/Es/ElasticSearch-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/14/Es/ElasticSearch-1/" itemprop="url">ElasticSearch入门（1）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-14T18:32:34+08:00">
+                2020-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe>
+
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><pre><code>这里选择rpm包安装es, rpm -ivh elasticsearch.rpm 文件存在于/usr/share/
 配置文件存在/etc/elasticsearch/elasticsearch.yml
 端口9200
 通过systemctl start elasticsearch启动，status,stop 查看状态与停止
@@ -114,82 +474,1589 @@ cluster.name               集群名称，判断是否是同一集群
 node.name                  节点名称，以此作为集群中不同节点的区分条件
 network.host/http.port     网络地址与端口，用于http和transport服务与使用
 path.data                  数据的存储地址
-path.log        ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/13/linux/vim-1/" title="vim基本使用">     <img class="post_bg" data-src="https://i.loli.net/2020/09/13/Qei1Wyk8dlP4FRH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vim基本使用"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/13/linux/vim-1/" title="vim基本使用">vim基本使用</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-13 18:10:43"><i class="far fa-calendar-alt"></i>2020-09-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">
+path.log                   日志的地址</code></pre><p><strong>Development与Production模式说明</strong></p>
+<pre><code>以transport的地址是否绑定在localhost为判断标准network.host
+Development模式下启动以warning的方式提示配置检查异常
+Production模式下在启动时会以error的方式提示配置检查异常
+修改参数的第二种方式
+bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol>
+<li><p>ES本地启动集群方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;elasticsearch</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;8200 -Epath.data&#x3D;node2</span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;9200 -Epath.data&#x3D;node3</span><br><span class="line">ip:port&#x2F;_cluster&#x2F;stats		更多集群相关信息</span><br><span class="line">ip:port&#x2F;_cat&#x2F;nodes			节点相关信息，是否组成集群，*表示主节点</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>index</p>
+<p> index由具有相同字段的列表组成，相当于mysql的table,6.0后type _doc不再起作用</p>
+<p> document 文档，每个文档具有唯一的id标识，自行指定或者es生成</p>
+</li>
+</ol>
+<h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><p>目录页对应正排索引，索引页对应倒排索引</p>
+<p>正排索引：文档ID到文档内容，单词的关联关系</p>
+<p>倒排索引：单词到文档ID的关联关系</p>
+<p><img src="https://i.loli.net/2020/09/14/vUZwgH8DJiM3kcp.png" alt="image.png"></p>
+<p>倒排索引是搜索引擎的核心，主要包含：单词词典与倒排列表</p>
+<p>es存储的每个字段都有自己的倒排索引</p>
+<h2 id="索引API"><a href="#索引API" class="headerlink" title="索引API"></a>索引API</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PUT 		&#x2F;test_index				创建索引</span><br><span class="line">GET 		_cat&#x2F;indices			   查看现有的索引</span><br><span class="line">DELETE  	&#x2F;test_index				删除索引</span><br><span class="line">GET 		&#x2F;test_index				查看当前索引信息</span><br></pre></td></tr></table></figure>
+<h2 id="文档的创建"><a href="#文档的创建" class="headerlink" title="文档的创建"></a>文档的创建</h2><ol>
+<li><p>单条文档插入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1				 单条数据的插入格式：&#x2F;index&#x2F;type&#x2F;id</span><br><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>批量文档的插入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">POST test_index&#x2F;_bulk</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;yun&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;,&quot;age&quot;:18&#125;</span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;</span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;Python Engineer&quot;,&quot;age&quot;:20&#125;</span><br></pre></td></tr></table></figure>
 
-三种模式转换命令模式：移动光标、删除  输入: / ?进入命令行模式 输入aiorAIOR进入插入模式
-插入模式：输入文本 按ESC进入命令模式
-命令行模式：搜索保存退出  按Esc进入模式
-命令模式
-移动光标h,j,k,l分别代表左下上右，可以加入数字控制位置,10j,向下移动10行0:移动到当前行首  $:移动前行尾G:移动到文件的最后一行,nG:移动到n行，gg移动到第一行n 向下移动n行
+</li>
+</ol>
+<h2 id="文档的查询"><a href="#文档的查询" class="headerlink" title="文档的查询"></a>文档的查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET	&#x2F;test_index&#x2F;_doc&#x2F;1				查询单条id&#x3D;1,存储在source里面的完整文档信息</span><br><span class="line">GET	&#x2F;test_index&#x2F;_doc&#x2F;_search		  query查询，term单词匹配username&#x3D;crush</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br><span class="line">GET &#x2F;test_index&#x2F;_mget					查询id是1,2的文档</span><br><span class="line">&#123;&quot;docs&quot;:[&#123;&quot;_id&quot;:&quot;1&quot;,&quot;_id&quot;:&quot;2&quot;&#125;]&#125;</span><br></pre></td></tr></table></figure>
 
-编辑x:向后删除一个字符    X:向前删除一个字符nx:向后删除n个字符dd:删除一行            ndd:向下删除n行u:撤销前一个操作
+<h2 id="Search-API"><a href="#Search-API" class="headerlink" title="Search API"></a>Search API</h2><p>对es里面存储的数据进行查询分析，endpoint为_search</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET		&#x2F;_search</span><br><span class="line">GET		&#x2F;test_index&#x2F;_search</span><br><span class="line">GET		&#x2F;test1_index,test2_index&#x2F;_search</span><br><span class="line">GET 	   &#x2F;test*&#x2F;_search					每次可以查询多个索引</span><br></pre></td></tr></table></figure>
+<h3 id="URL-Search与Request-Body-Search"><a href="#URL-Search与Request-Body-Search" class="headerlink" title="URL Search与Request Body Search"></a>URL Search与Request Body Search</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># url search</span><br><span class="line">GET &#x2F;my_index&#x2F;_search?q&#x3D;crush&amp;df&#x3D;user&amp;sort&#x3D;age:asc&amp;from&#x3D;4&amp;size&#x3D;10&amp;timeout&#x3D;15</span><br></pre></td></tr></table></figure>
+<p> q指定查询的语句,df或者default，不指定默认查询，es会查询所有字段,from size用于分页，返回5-14个文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># request body search</span><br><span class="line">GET	&#x2F;my_index&#x2F;_doc&#x2F;_search</span><br><span class="line">&#123;</span><br><span class="line">&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;user&quot;:&quot;crush&quot;&#125;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="QueryDSL查询"><a href="#QueryDSL查询" class="headerlink" title="QueryDSL查询"></a>QueryDSL查询</h3><p>字段类查询: 全文匹配、match、match_phrase等query,单词匹配：term、terms、range等query</p>
+<p><strong>match Query</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET	test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># operator and</span><br><span class="line">GET test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&#123;&quot;query&quot;:&quot;yun crush&quot;,&quot;operator&quot;:&quot;and&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#最小匹配字段数</span><br><span class="line">GET		test_index&#x2F;_search</span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;job&quot;:&#123;&quot;query&quot;:&quot;java python Engineer&quot;,&quot;minium_should_match&quot;:&quot;2&quot;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
 
-查找与替换 /word: 向后查找word单词，可以是正则表达式
- ?word:向前查找word
- :%s/word1/word2[gc]:将word1替换成word2，g全局，gc替换时确认,%整个文本替换
-插入模式 i,I:进入插入模式，前者在当前位置插入，后者为当前行第一个非空白字符
- o,O:前者在当前行的后面插入新行，后者在当前行的前面插入新行
- r,R:前者替换光标所在的字符，后者从当前位置开始替换，直到按下Esc为止
-命令 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/13/python/python-1/" title="python语法">     <img class="post_bg" data-src="https://i.loli.net/2020/09/13/vqagdHD38iRsOTW.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python语法"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/13/python/python-1/" title="python语法">python语法</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-13 17:40:16"><i class="far fa-calendar-alt"></i>2020-09-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/python/">python</a></span></div><div class="content">
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/09/13/linux/vim-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/13/linux/vim-1/" itemprop="url">vim基本使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-13T18:10:43+08:00">
+                2020-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1424018194&auto=1&height=66"></iframe>
+
+<h2 id="三种模式转换"><a href="#三种模式转换" class="headerlink" title="三种模式转换"></a>三种模式转换</h2><p>命令模式：移动光标、删除  输入: / ?进入命令行模式 输入aiorAIOR进入插入模式</p>
+<p>插入模式：输入文本 按ESC进入命令模式</p>
+<p>命令行模式：搜索保存退出  按Esc进入模式</p>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ol>
+<li><p>移动光标<br>h,j,k,l分别代表左下上右，可以加入数字控制位置,10j,向下移动10行<br>0:移动到当前行首  $:移动前行尾<br>G:移动到文件的最后一行,nG:移动到n行，gg移动到第一行<br>n<Enter> 向下移动n行</p>
+</li>
+<li><p>编辑<br>x:向后删除一个字符    X:向前删除一个字符<br>nx:向后删除n个字符<br>dd:删除一行            ndd:向下删除n行<br>u:撤销前一个操作</p>
+</li>
+<li><p>查找与替换<br> /word: 向后查找word单词，可以是正则表达式</p>
+<p> ?word:向前查找word</p>
+<p> :%s/word1/word2[gc]:将word1替换成word2，g全局，gc替换时确认,%整个文本替换</p>
+<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><p> i,I:进入插入模式，前者在当前位置插入，后者为当前行第一个非空白字符</p>
+<p> o,O:前者在当前行的后面插入新行，后者在当前行的前面插入新行</p>
+<p> r,R:前者替换光标所在的字符，后者从当前位置开始替换，直到按下Esc为止</p>
+<h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><p> :进入命令行模式<br> :q :没有修改文件时推出</p>
+<p> :q!:修改了文件，但不保存文件退出</p>
+<p> :w:保存文件</p>
+<p> :w [文件名]: 另存为一个新文件，当前文件没有保存</p>
+<p> :w!:强制保存</p>
+<p> :x:保存并退出</p>
+<p> :x!:强制保存退出</p>
+<p> :ZZ:有修改保存退出，没有修改直接退出</p>
+<p> :set nu:显示行号</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/09/13/python/python-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/13/python/python-1/" itemprop="url">python语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-13T17:40:16+08:00">
+                2020-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>
 ### 基础语法
-12345name &#x3D; &#39;crush  &#39;name.title()		#首字母大写name.upper()		#转大写name.lower()		#转小写name.strip()		#取出空格
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()		#首字母大写</span><br><span class="line">name.upper()		#转大写</span><br><span class="line">name.lower()		#转小写</span><br><span class="line">name.strip()		#取出空格</span><br></pre></td></tr></table></figure>
 ### 数组
-12345arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项print(a[-1])			   #取最后一个元素print(a[:-1])			  #除了最后一个全部取出print(a[::-1])			 #取从后向前相反的元素print(a[2::-1])			#下标为2的元素翻转读取
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])			   #取最后一个元素</span><br><span class="line">print(a[:-1])			  #除了最后一个全部取出</span><br><span class="line">print(a[::-1])			 #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])			#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure>
 
-布尔运算1True  False  and  or  not    none表示空值
-循环遍历1range(5)     生成0开始小于5的整数
-set12s &#x3D; set([1,2,3])s.add(4)          s.remove(2)</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/13/mongodb/mongodb-1/" title="docker与Mongodb的安装">     <img class="post_bg" data-src="https://i.loli.net/2020/09/13/ezUbTCFQPLXk9vr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker与Mongodb的安装"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/13/mongodb/mongodb-1/" title="docker与Mongodb的安装">docker与Mongodb的安装</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-13 11:40:01"><i class="far fa-calendar-alt"></i>2020-09-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Nosql/">Nosql</a></span></div><div class="content">
+<h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure>
+<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
 
-Docker与Mongodb
-安装、启动docker 12345sudo yum -y updatesudo yum -y install epel-releasesudo yum -y install docker-iosystemclt start docker					       //启动dockerdocker  version							//查看docker版本
-docker的常用命令 123docker ps					 //查看docker容器iddocker images				//查看本地镜像docker ps -a				//显示所有容器,-aq只显示id
-docker安装Mongodb 4.0 1234567docker pull mongo:4		   //拉取mongodb4.0镜像docker images					//查看是否有Mongodb镜像//启动mongodb 端口号27017  进程name mongodocker run -itd --name mongo -p 27017:27017 mongo:4	  //mongodb 4.0版本d ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/12/linux/linux-1/" title="linux常用指令">     <img class="post_bg" data-src="https://i.loli.net/2020/09/10/EaHou4nyU2sxXLl.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux常用指令"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/12/linux/linux-1/" title="linux常用指令">linux常用指令</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-12 23:08:31"><i class="far fa-calendar-alt"></i>2020-09-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">
+    
 
-linux常识性指令1234567uname --help					//显示帮助uname -v					//输出内核版本信息uname --version					//显示版本信息并退出who am i					//等于who -m 登陆用户的信息who						//查询当前登录在系统上的用户信息#						//root登陆具有所有权限$						//普通用户没什么权限
-文件的传输windows本地安装git bash使用
-1.从远处(服务器)复制文件到本地目录
-1$ scp root@192.168.45.129:/usr/local/tmp/test.md ./
-2.从远处(服务器)复制目录到本地目录
-1$ scp root@192.168.45.129:/usr/local/tmp ./
-3.上传本地文件到服务器指定目录
-1$ scp /opt/test.tar root@192.168.45.129:/usr/local
-4.上传本地目录到服务器指定目录
-1$ scp /opt/soft/text root@192.168.45.12:/usr/local
-5.wi ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/07/13/leetcode/twoSum/" title="two-sum">     <img class="post_bg" data-src="https://i.loli.net/2020/09/10/MSta4Qmf6o9RUvT.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="two-sum"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/13/leetcode/twoSum/" title="two-sum">two-sum</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-13 21:43:59"><i class="far fa-calendar-alt"></i>2020-07-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/leetcode/">leetcode</a></span></div><div class="content">&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+    
 
-给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。
+    
 
-leetcode-两数之和
-123456789101112class Solution &#123;    public int[] twoSum(int[] nums, int target) &#123;        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;                if (nums[j] &#x3D;&#x3D; target - nums[i] ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/07/13/linux/firewall/" title="防火墙常用命令">     <img class="post_bg" data-src="https://i.loli.net/2020/09/10/zDXJirB8vtq43He.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="防火墙常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/13/linux/firewall/" title="防火墙常用命令">防火墙常用命令</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-13 21:26:41"><i class="far fa-calendar-alt"></i>2020-07-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">
+    <footer class="post-footer">
+      
 
-防火墙系统centos7
-Centos7默认的防火墙不是iptables而是firewall
-查看防火墙状态
-1firewall-cmd --state
-开启/关闭防火墙
-12systemctl start firewalldsystemctl stop firewalld
-禁止开机启动
-1systemctl disable firewalld.service
-查看开放的端口
-1firewall-cmd --list-all
-监听端口
-1netstat -lnp | grep 8080
-开放/关闭端口
-12firewall-cmd --add-port&#x3D;80&#x2F;tcp --permanent      &#x2F;&#x2F;开放端口--permanent重启不会丢失firewall-cmd --remove-port&#x3D;9999&#x2F;tcp --permanent &#x2F;&#x2F;关闭端口
-重启防火墙
-1firewall-cmd --reload      &#x2F;&#x2F;开放，关闭端口都需要重启防火墙</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/" title="shell">     <img class="post_bg" data-src="https://i.loli.net/2020/09/10/A1lzbY6K9aGjnUL.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="shell"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/" title="shell">shell</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-13 21:26:41"><i class="far fa-calendar-alt"></i>2020-07-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/07/13/book/book/" title="book">     <img class="post_bg" data-src="https://i.loli.net/2020/09/10/YPOa2voiU7c6sND.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="book"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/13/book/book/" title="book">book</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-13 21:26:41"><i class="far fa-calendar-alt"></i>2020-07-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/book/">book</a></span></div><div class="content"></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Crush</div><div class="author-info__description">非著名程序员</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">12</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">11</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">7</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" type="button" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yunCrush" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:yunfei1577266641@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://i.loli.net/2020/09/10/f9L2kpgHYMPGAmK.jpg" target="_blank" title="qq"><i class="fab fa-qq"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Crush单排日记</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/09/17/leetcode/algorithm-1/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/09/13/wHXkA97ue5O8WMp.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="算法基本方法总结" alt="算法基本方法总结"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/17/leetcode/algorithm-1/" title="算法基本方法总结">算法基本方法总结</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-17 19:04:12">2020-09-17</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/14/Es/ElasticSearch-1/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/09/13/oJ8VNADyQ4msxwW.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="ElasticSearch入门（1）" alt="ElasticSearch入门（1）"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/14/Es/ElasticSearch-1/" title="ElasticSearch入门（1）">ElasticSearch入门（1）</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-14 18:32:34">2020-09-14</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/13/linux/vim-1/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/09/13/Qei1Wyk8dlP4FRH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="vim基本使用" alt="vim基本使用"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/13/linux/vim-1/" title="vim基本使用">vim基本使用</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-13 18:10:43">2020-09-13</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/13/python/python-1/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/09/13/vqagdHD38iRsOTW.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="python语法" alt="python语法"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/13/python/python-1/" title="python语法">python语法</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-13 17:40:16">2020-09-13</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/13/mongodb/mongodb-1/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="https://i.loli.net/2020/09/13/ezUbTCFQPLXk9vr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="docker与Mongodb的安装" alt="docker与Mongodb的安装"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/13/mongodb/mongodb-1/" title="docker与Mongodb的安装">docker与Mongodb的安装</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-13 11:40:01">2020-09-13</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Nosql/"><span class="card-category-list-name">Nosql</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/book/"><span class="card-category-list-name">book</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/leetcode/"><span class="card-category-list-name">leetcode</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/thread/"><span class="card-category-list-name">thread</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/young/"><span class="card-category-list-name">young</span><span class="card-category-list-count">1</span></a></li>
-                       
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href='/tags/ES6/' style='font-size:18px; color:rgb(14, 28, 182)'>ES6</a><a href='/tags/algorithm/' style='font-size:18px; color:rgb(62, 126, 194)'>algorithm</a><a href='/tags/book/' style='font-size:17px; color:rgb(21, 130, 105)'>book</a><a href='/tags/docker/' style='font-size:19px; color:rgb(45, 58, 112)'>docker</a><a href='/tags/firewall/' style='font-size:17px; color:rgb(175, 30, 166)'>firewall</a><a href='/tags/linux/' style='font-size:17px; color:rgb(28, 46, 6)'>linux</a><a href='/tags/mongodb/' style='font-size:18px; color:rgb(23, 95, 129)'>mongodb</a><a href='/tags/shell/' style='font-size:20px; color:rgb(155, 108, 124)'>shell</a><a href='/tags/vim/' style='font-size:17px; color:rgb(185, 26, 119)'>vim</a><a href='/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/' style='font-size:21px; color:rgb(113, 73, 112)'>多线程</a><a href='/tags/%E6%9E%AF%E6%9C%A8%E9%80%A2%E6%98%A5%E5%A4%8F%E7%A7%8B%E5%86%AC/' style='font-size:21px; color:rgb(41, 103, 40)'>枯木逢春夏秋冬</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">6</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">12</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="7/5 /2020 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">2.6k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://i.loli.net/2020/09/10/A9wFKU3VNTJGzXx.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Crush</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">welcome to Crush's blog !</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/click_heart.js"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
-if (subtitleEffect) { 
-  var typed = new Typed("#subtitle", {
-    strings: "你还怕大雨吗？,Are you still afraid of heavy rain ？".split(","),
-    startDelay: 300,
-    typeSpeed: 150,
-    loop: true,
-    backSpeed: 50
-  })
-} else {
-  document.getElementById("subtitle").innerHTML = '你还怕大雨吗？'
-}</script></body></html>
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/09/13/mongodb/mongodb-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/13/mongodb/mongodb-1/" itemprop="url">docker与Mongodb的安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-13T11:40:01+08:00">
+                2020-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Nosql/" itemprop="url" rel="index">
+                    <span itemprop="name">Nosql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1449116345&auto=1&height=66"></iframe>
+
+<h2 id="Docker与Mongodb"><a href="#Docker与Mongodb" class="headerlink" title="Docker与Mongodb"></a>Docker与Mongodb</h2><ol>
+<li>安装、启动docker <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y update</span><br><span class="line">sudo yum -y install epel-release</span><br><span class="line">sudo yum -y install docker-io</span><br><span class="line">systemclt start docker					       //启动docker</span><br><span class="line">docker  version							//查看docker版本</span><br></pre></td></tr></table></figure></li>
+<li>docker的常用命令 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps					 //查看docker容器id</span><br><span class="line">docker images				//查看本地镜像</span><br><span class="line">docker ps -a				//显示所有容器,-aq只显示id</span><br></pre></td></tr></table></figure></li>
+<li>docker安装Mongodb 4.0 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker pull mongo:4		   //拉取mongodb4.0镜像</span><br><span class="line">docker images					//查看是否有Mongodb镜像</span><br><span class="line">//启动mongodb 端口号27017  进程name mongo</span><br><span class="line">docker run -itd --name mongo -p 27017:27017 mongo:4	  //mongodb 4.0版本</span><br><span class="line">docker run -itd --name mongo -p 27017:27017 mongo:latest //最新版本</span><br><span class="line">//验证是否启动成功</span><br><span class="line">docker exec -it mongo mongo</span><br></pre></td></tr></table></figure></li>
+<li>docker移除镜像与容器 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line">docker rmi &lt;image id&gt;   			&#x2F;&#x2F;强制删除指定id的image</span><br><span class="line">docker rmi $(docker iamges -q)			 	 &#x2F;&#x2F;删除所有images</span><br><span class="line">docker stop container-id				   &#x2F;&#x2F;停止该id的容器</span><br><span class="line">docker rm container-id 					  &#x2F;&#x2F;移除该id的容器</span><br><span class="line">docker stop $(docker ps -aq)				   &#x2F;&#x2F;停止所有的容器</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/09/12/linux/linux-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/12/linux/linux-1/" itemprop="url">linux常用指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-12T23:08:31+08:00">
+                2020-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe>
+
+<h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">uname --help					//显示帮助</span><br><span class="line">uname -v					//输出内核版本信息</span><br><span class="line">uname --version					//显示版本信息并退出</span><br><span class="line">who am i					//等于who -m 登陆用户的信息</span><br><span class="line">who						//查询当前登录在系统上的用户信息</span><br><span class="line"><span class="meta">#</span><span class="bash">						//root登陆具有所有权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">						//普通用户没什么权限</span></span><br></pre></td></tr></table></figure>
+<h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p><strong>windows本地安装git bash使用</strong></p>
+<p><em>1.从远处(服务器)复制文件到本地目录</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp/test.md ./</span></span><br></pre></td></tr></table></figure>
+<p><em>2.从远处(服务器)复制目录到本地目录</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp ./</span></span><br></pre></td></tr></table></figure>
+<p><em>3.上传本地文件到服务器指定目录</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/test.tar root@192.168.45.129:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
+<p><em>4.上传本地目录到服务器指定目录</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/soft/text root@192.168.45.12:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure>
+<p><em>5.windows文件传输到服务器</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/07/13/leetcode/twoSum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/13/leetcode/twoSum/" itemprop="url">two-sum</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-13T21:43:59+08:00">
+                2020-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p>
+</blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/07/13/linux/firewall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/13/linux/firewall/" itemprop="url">防火墙常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-13T21:26:41+08:00">
+                2020-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe>
+
+<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p><strong>系统centos7</strong></p>
+<p>Centos7默认的防火墙不是iptables而是firewall</p>
+<p>查看防火墙状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<p>开启/关闭防火墙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+<p>禁止开机启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+<p>查看开放的端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+<p>监听端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep 8080</span><br></pre></td></tr></table></figure>
+<p>开放/关闭端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;80&#x2F;tcp --permanent      &#x2F;&#x2F;开放端口--permanent重启不会丢失</span><br><span class="line">firewall-cmd --remove-port&#x3D;9999&#x2F;tcp --permanent &#x2F;&#x2F;关闭端口</span><br></pre></td></tr></table></figure>
+<p>重启防火墙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload      &#x2F;&#x2F;开放，关闭端口都需要重启防火墙</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/07/13/book/book/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/13/book/book/" itemprop="url">book</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-13T21:26:41+08:00">
+                2020-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/book/" itemprop="url" rel="index">
+                    <span itemprop="name">book</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuncrush.com/2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crush">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crush">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/13/shell/Shell%E7%BC%96%E7%A8%8B/" itemprop="url">shell</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-13T21:26:41+08:00">
+                2020-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Crush</p>
+              <p class="site-description motion-element" itemprop="description">非著名程序员</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crush</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
