@@ -13,17 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title>book</title>
-    <url>/2020/07/13/book/book/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-      <tags>
-        <tag>book</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ElasticSearch入门（1）</title>
     <url>/2020/09/14/Es/ElasticSearch-1/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe>
@@ -56,7 +45,7 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
 <h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><p>目录页对应正排索引，索引页对应倒排索引</p>
 <p>正排索引：文档ID到文档内容，单词的关联关系</p>
 <p>倒排索引：单词到文档ID的关联关系</p>
-<p><img src="https://i.loli.net/2020/09/14/vUZwgH8DJiM3kcp.png" alt="image.png"></p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/09/14/vUZwgH8DJiM3kcp.png" alt="image.png"></p>
 <p>倒排索引是搜索引擎的核心，主要包含：单词词典与倒排列表</p>
 <p>es存储的每个字段都有自己的倒排索引</p>
 <h2 id="索引API"><a href="#索引API" class="headerlink" title="索引API"></a>索引API</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PUT 		&#x2F;test_index				创建索引</span><br><span class="line">GET 		_cat&#x2F;indices			   查看现有的索引</span><br><span class="line">DELETE  	&#x2F;test_index				删除索引</span><br><span class="line">GET 		&#x2F;test_index				查看当前索引信息</span><br></pre></td></tr></table></figure>
@@ -105,7 +94,7 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
 <p><strong>String</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str.charAt(int i) .indexOf(&quot;object&quot;) .split(&quot;,&quot;) .length()</span><br><span class="line">.substring() .equals()	.trim()</span><br></pre></td></tr></table></figure>
 <p><strong>System.arraycopy()</strong></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" alt=""></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.nlark.com/yuque/0/2020/png/361120/1583075124518-7deb469a-7bc8-4d77-b8d2-f548a570949f.png" alt=""></p>
 <h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><strong>keySet</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String key:map.keySet())&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>entrySet():lterator</strong></p>
@@ -114,6 +103,36 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">    &#x2F;&#x2F; entry.getKey()  entry.getValue()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p><strong>map.values</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(String item: map.values())</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>book</title>
+    <url>/2020/07/13/book/book/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+      <tags>
+        <tag>book</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>two-sum</title>
+    <url>/2020/07/13/leetcode/twoSum/</url>
+    <content><![CDATA[<p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p>
+<blockquote>
+<p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p>
+</blockquote>
+<p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -147,25 +166,6 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       </categories>
       <tags>
         <tag>firewall</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>two-sum</title>
-    <url>/2020/07/13/leetcode/twoSum/</url>
-    <content><![CDATA[<p><strong>&nbsp; &nbsp; &nbsp;  &nbsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</strong></p>
-<blockquote>
-<p>给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p>
-</blockquote>
-<p><a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">leetcode-两数之和</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">           for (int j &#x3D; i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">                if (nums[j] &#x3D;&#x3D; target - nums[i]) &#123;</span><br><span class="line">                    return new int[] &#123; i, j &#125;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -234,6 +234,22 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>python语法</title>
+    <url>/2020/09/13/python/python-1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>
+### 基础语法
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()		#首字母大写</span><br><span class="line">name.upper()		#转大写</span><br><span class="line">name.lower()		#转小写</span><br><span class="line">name.strip()		#取出空格</span><br></pre></td></tr></table></figure>
+### 数组
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])			   #取最后一个元素</span><br><span class="line">print(a[:-1])			  #除了最后一个全部取出</span><br><span class="line">print(a[::-1])			 #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])			#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure>
+
+<h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure>
+<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>docker与Mongodb的安装</title>
     <url>/2020/09/13/mongodb/mongodb-1/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1449116345&auto=1&height=66"></iframe>
@@ -277,21 +293,5 @@ bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#�
       <tags>
         <tag>多线程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>python语法</title>
-    <url>/2020/09/13/python/python-1/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396073496&auto=1&height=66"></iframe>
-### 基础语法
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name &#x3D; &#39;crush  &#39;</span><br><span class="line">name.title()		#首字母大写</span><br><span class="line">name.upper()		#转大写</span><br><span class="line">name.lower()		#转小写</span><br><span class="line">name.strip()		#取出空格</span><br></pre></td></tr></table></figure>
-### 数组
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arr &#x3D; [1,2,3,4,5]          # [:n]列表中的第一项到第n项  [m:] m+1到最后一项</span><br><span class="line">print(a[-1])			   #取最后一个元素</span><br><span class="line">print(a[:-1])			  #除了最后一个全部取出</span><br><span class="line">print(a[::-1])			 #取从后向前相反的元素</span><br><span class="line">print(a[2::-1])			#下标为2的元素翻转读取</span><br></pre></td></tr></table></figure>
-
-<h3 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">True  False  and  or  not    none表示空值</span><br></pre></td></tr></table></figure>
-<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">range(5)     生成0开始小于5的整数</span><br></pre></td></tr></table></figure>
-<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s &#x3D; set([1,2,3])</span><br><span class="line">s.add(4)          s.remove(2)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
   </entry>
 </search>
