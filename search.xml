@@ -13,83 +13,111 @@
       </tags>
   </entry>
   <entry>
-    <title>Es/ElasticSearch-1</title>
-    <url>/2020/09/14/Es/ElasticSearch-1/</url>
-    <content><![CDATA[<hr>
-<p>title: ElasticSearch入门（1）<br>categories:<br>tags: ES6<br>cover: <a href="https://i.loli.net/2020/09/13/oJ8VNADyQ4msxwW.jpg" target="_blank" rel="noopener">https://i.loli.net/2020/09/13/oJ8VNADyQ4msxwW.jpg</a></p>
-<hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe>
+    <title>reflect/reflect-1</title>
+    <url>/2021/01/02/reflect/reflect-1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>ElasticSearch入门（1）</title>
+    <url>/2020/09/14/Es/ElasticSearch_1/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1436709403&auto=1&height=66"></iframe>
+
+
 
 <h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><pre><code>这里选择rpm包安装es, rpm -ivh elasticsearch.rpm 文件存在于/usr/share/
+
 配置文件存在/etc/elasticsearch/elasticsearch.yml
+
 端口9200
+
 通过systemctl start elasticsearch启动，status,stop 查看状态与停止
+
 elasticsearch.yml          es的相关配置，此处需要将network.host设置为0.0.0.0
+
 jvm.options                jvm的相关参数
+
 log4j2.properties          日志相关的配置
+
 cluster.name               集群名称，判断是否是同一集群
+
 node.name                  节点名称，以此作为集群中不同节点的区分条件
+
 network.host/http.port     网络地址与端口，用于http和transport服务与使用
+
 path.data                  数据的存储地址
+
 path.log                   日志的地址</code></pre><p><strong>Development与Production模式说明</strong></p>
 <pre><code>以transport的地址是否绑定在localhost为判断标准network.host
+
 Development模式下启动以warning的方式提示配置检查异常
+
 Production模式下在启动时会以error的方式提示配置检查异常
+
 修改参数的第二种方式
+
 bin/elasticsearch-Ehttp.port=19200</code></pre><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol>
-<li><p>ES本地启动集群方式</p>
-<pre><code>bin/elasticsearch
-bin/elasticsearch -Ehttp.port=8200 -Epath.data=node2
-bin/elasticsearch -Ehttp.port=9200 -Epath.data=node3
-ip:port/_cluster/stats        更多集群相关信息
-ip:port/_cat/nodes            节点相关信息，是否组成集群，*表示主节点</code></pre></li>
-<li><p>index</p>
-<p> index由具有相同字段的列表组成，相当于mysql的table,6.0后type _doc不再起作用</p>
-<p> document 文档，每个文档具有唯一的id标识，自行指定或者es生成</p>
-</li>
+<li>ES本地启动集群方式</li>
 </ol>
-<h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><p>目录页对应正排索引，索引页对应倒排索引</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">bin&#x2F;elasticsearch</span><br><span class="line"></span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;8200 -Epath.data&#x3D;node2</span><br><span class="line"></span><br><span class="line">bin&#x2F;elasticsearch -Ehttp.port&#x3D;9200 -Epath.data&#x3D;node3</span><br><span class="line"></span><br><span class="line">ip:port&#x2F;_cluster&#x2F;stats		更多集群相关信息</span><br><span class="line"></span><br><span class="line">ip:port&#x2F;_cat&#x2F;nodes			节点相关信息，是否组成集群，*表示主节点</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>index</li>
+</ol>
+<pre><code>index由具有相同字段的列表组成，相当于mysql的table,6.0后type _doc不再起作用
+
+
+
+document 文档，每个文档具有唯一的id标识，自行指定或者es生成</code></pre><h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><p>目录页对应正排索引，索引页对应倒排索引</p>
 <p>正排索引：文档ID到文档内容，单词的关联关系</p>
 <p>倒排索引：单词到文档ID的关联关系</p>
 <p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/09/14/vUZwgH8DJiM3kcp.png" alt="image.png"></p>
 <p>倒排索引是搜索引擎的核心，主要包含：单词词典与倒排列表</p>
 <p>es存储的每个字段都有自己的倒排索引</p>
-<h2 id="索引API"><a href="#索引API" class="headerlink" title="索引API"></a>索引API</h2><pre><code>PUT         /test_index                创建索引
-GET         _cat/indices               查看现有的索引
-DELETE      /test_index                删除索引
-GET         /test_index                查看当前索引信息</code></pre><h2 id="文档的创建"><a href="#文档的创建" class="headerlink" title="文档的创建"></a>文档的创建</h2><ol>
-<li><p>单条文档插入</p>
-<pre><code>PUT /test_index/_doc/1                 单条数据的插入格式：/index/type/id
-PUT /test_index/_doc/1
-{&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;}</code></pre></li>
-<li><p>批量文档的插入</p>
-<pre><code>POST test_index/_bulk
-{&quot;index&quot;:{&quot;_id&quot;:&quot;1&quot;}}
-{&quot;username&quot;:&quot;yun&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;,&quot;age&quot;:18}
-{&quot;index&quot;:{&quot;_id&quot;:&quot;2&quot;}}
-{&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;Python Engineer&quot;,&quot;age&quot;:20}</code></pre></li>
+<h2 id="索引API"><a href="#索引API" class="headerlink" title="索引API"></a>索引API</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">PUT 		&#x2F;test_index				创建索引</span><br><span class="line"></span><br><span class="line">GET 		_cat&#x2F;indices			   查看现有的索引</span><br><span class="line"></span><br><span class="line">DELETE  	&#x2F;test_index				删除索引</span><br><span class="line"></span><br><span class="line">GET 		&#x2F;test_index				查看当前索引信息</span><br></pre></td></tr></table></figure>
+
+<h2 id="文档的创建"><a href="#文档的创建" class="headerlink" title="文档的创建"></a>文档的创建</h2><ol>
+<li>单条文档插入</li>
 </ol>
-<h2 id="文档的查询"><a href="#文档的查询" class="headerlink" title="文档的查询"></a>文档的查询</h2><pre><code>GET    /test_index/_doc/1                查询单条id=1,存储在source里面的完整文档信息
-GET    /test_index/_doc/_search          query查询，term单词匹配username=crush
-{&quot;query&quot;:{&quot;term&quot;:{&quot;username&quot;:&quot;crush&quot;}}}
-GET /test_index/_mget                    查询id是1,2的文档
-{&quot;docs&quot;:[{&quot;_id&quot;:&quot;1&quot;,&quot;_id&quot;:&quot;2&quot;}]}</code></pre><h2 id="Search-API"><a href="#Search-API" class="headerlink" title="Search API"></a>Search API</h2><p>对es里面存储的数据进行查询分析，endpoint为_search</p>
-<pre><code>GET        /_search
-GET        /test_index/_search
-GET        /test1_index,test2_index/_search
-GET        /test*/_search                    每次可以查询多个索引</code></pre><h3 id="URL-Search与Request-Body-Search"><a href="#URL-Search与Request-Body-Search" class="headerlink" title="URL Search与Request Body Search"></a>URL Search与Request Body Search</h3><pre><code># url search
-GET /my_index/_search?q=crush&amp;df=user&amp;sort=age:asc&amp;from=4&amp;size=10&amp;timeout=15</code></pre><p> q指定查询的语句,df或者default，不指定默认查询，es会查询所有字段,from size用于分页，返回5-14个文档</p>
-<pre><code># request body search
-GET    /my_index/_doc/_search
-{
-&quot;query&quot;:{&quot;term&quot;:{&quot;user&quot;:&quot;crush&quot;}}
-}</code></pre><h3 id="QueryDSL查询"><a href="#QueryDSL查询" class="headerlink" title="QueryDSL查询"></a>QueryDSL查询</h3><p>字段类查询: 全文匹配、match、match_phrase等query,单词匹配：term、terms、range等query</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1				 单条数据的插入格式：&#x2F;index&#x2F;type&#x2F;id</span><br><span class="line"></span><br><span class="line">PUT &#x2F;test_index&#x2F;_doc&#x2F;1</span><br><span class="line"></span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>批量文档的插入</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">POST test_index&#x2F;_bulk</span><br><span class="line"></span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&#123;&quot;username&quot;:&quot;yun&quot;,&quot;job&quot;:&quot;JAVA Engineer&quot;,&quot;age&quot;:18&#125;</span><br><span class="line"></span><br><span class="line">&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&#123;&quot;username&quot;:&quot;crush&quot;,&quot;job&quot;:&quot;Python Engineer&quot;,&quot;age&quot;:20&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文档的查询"><a href="#文档的查询" class="headerlink" title="文档的查询"></a>文档的查询</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">GET	&#x2F;test_index&#x2F;_doc&#x2F;1				查询单条id&#x3D;1,存储在source里面的完整文档信息</span><br><span class="line"></span><br><span class="line">GET	&#x2F;test_index&#x2F;_doc&#x2F;_search		  query查询，term单词匹配username&#x3D;crush</span><br><span class="line"></span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line">GET &#x2F;test_index&#x2F;_mget					查询id是1,2的文档</span><br><span class="line"></span><br><span class="line">&#123;&quot;docs&quot;:[&#123;&quot;_id&quot;:&quot;1&quot;,&quot;_id&quot;:&quot;2&quot;&#125;]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Search-API"><a href="#Search-API" class="headerlink" title="Search API"></a>Search API</h2><p>对es里面存储的数据进行查询分析，endpoint为_search</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">GET		&#x2F;_search</span><br><span class="line"></span><br><span class="line">GET		&#x2F;test_index&#x2F;_search</span><br><span class="line"></span><br><span class="line">GET		&#x2F;test1_index,test2_index&#x2F;_search</span><br><span class="line"></span><br><span class="line">GET 	   &#x2F;test*&#x2F;_search					每次可以查询多个索引</span><br></pre></td></tr></table></figure>
+
+<h3 id="URL-Search与Request-Body-Search"><a href="#URL-Search与Request-Body-Search" class="headerlink" title="URL Search与Request Body Search"></a>URL Search与Request Body Search</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"># url search</span><br><span class="line"></span><br><span class="line">GET &#x2F;my_index&#x2F;_search?q&#x3D;crush&amp;df&#x3D;user&amp;sort&#x3D;age:asc&amp;from&#x3D;4&amp;size&#x3D;10&amp;timeout&#x3D;15</span><br></pre></td></tr></table></figure>
+
+<p> q指定查询的语句,df或者default，不指定默认查询，es会查询所有字段,from size用于分页，返回5-14个文档</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"># request body search</span><br><span class="line"></span><br><span class="line">GET	&#x2F;my_index&#x2F;_doc&#x2F;_search</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&quot;query&quot;:&#123;&quot;term&quot;:&#123;&quot;user&quot;:&quot;crush&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="QueryDSL查询"><a href="#QueryDSL查询" class="headerlink" title="QueryDSL查询"></a>QueryDSL查询</h3><p>字段类查询: 全文匹配、match、match_phrase等query,单词匹配：term、terms、range等query</p>
 <p><strong>match Query</strong></p>
-<pre><code>GET    test_index/_search
-{&quot;query&quot;:{&quot;match&quot;:{&quot;username&quot;:&quot;crush&quot;}}}</code></pre><pre><code># operator and
-GET test_index/_search
-{&quot;query&quot;:{&quot;match&quot;:{&quot;username&quot;:{&quot;query&quot;:&quot;yun crush&quot;,&quot;operator&quot;:&quot;and}}}}</code></pre><pre><code>#最小匹配字段数
-GET        test_index/_search
-{&quot;query&quot;:{&quot;match&quot;:{&quot;job&quot;:{&quot;query&quot;:&quot;java python Engineer&quot;,&quot;minium_should_match&quot;:&quot;2&quot;}}}}</code></pre>]]></content>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">GET	test_index&#x2F;_search</span><br><span class="line"></span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&quot;crush&quot;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"># operator and</span><br><span class="line"></span><br><span class="line">GET test_index&#x2F;_search</span><br><span class="line"></span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;username&quot;:&#123;&quot;query&quot;:&quot;yun crush&quot;,&quot;operator&quot;:&quot;and&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#最小匹配字段数</span><br><span class="line"></span><br><span class="line">GET		test_index&#x2F;_search</span><br><span class="line"></span><br><span class="line">&#123;&quot;query&quot;:&#123;&quot;match&quot;:&#123;&quot;job&quot;:&#123;&quot;query&quot;:&quot;java python Engineer&quot;,&quot;minium_should_match&quot;:&quot;2&quot;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
   </entry>
 </search>
