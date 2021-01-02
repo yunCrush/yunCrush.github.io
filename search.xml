@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>夏天</title>
+      <link href="2021/01/02/summer/"/>
+      <url>2021/01/02/summer/</url>
+      
+        <content type="html"><![CDATA[<p>  夏天的风很自由。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> young </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 枯木逢春夏秋冬 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vim基本使用</title>
+      <link href="2021/01/02/linux/vim/"/>
+      <url>2021/01/02/linux/vim/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1424018194&auto=1&height=66"></iframe><h2 id="三种模式转换"><a href="#三种模式转换" class="headerlink" title="三种模式转换"></a>三种模式转换</h2><p>命令模式：移动光标、删除  输入: / ?进入命令行模式 输入aiorAIOR进入插入模式</p><p>插入模式：输入文本 按ESC进入命令模式</p><p>命令行模式：搜索保存退出  按Esc进入模式</p><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ol><li><p>移动光标<br>h,j,k,l分别代表左下上右，可以加入数字控制位置,10j,向下移动10行<br>0:移动到当前行首  $:移动前行尾<br>G:移动到文件的最后一行,nG:移动到n行，gg移动到第一行<br>n<Enter> 向下移动n行</p></li><li><p>编辑<br>x:向后删除一个字符    X:向前删除一个字符<br>nx:向后删除n个字符<br>dd:删除一行            ndd:向下删除n行<br>u:撤销前一个操作</p></li><li><p>查找与替换<br> /word: 向后查找word单词，可以是正则表达式</p><p> ?word:向前查找word</p><p> :%s/word1/word2[gc]:将word1替换成word2，g全局，gc替换时确认,%整个文本替换</p><h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><p> i,I:进入插入模式，前者在当前位置插入，后者为当前行第一个非空白字符</p><p> o,O:前者在当前行的后面插入新行，后者在当前行的前面插入新行</p><p> r,R:前者替换光标所在的字符，后者从当前位置开始替换，直到按下Esc为止</p><h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><p> :进入命令行模式<br> :q :没有修改文件时推出</p><p> :q!:修改了文件，但不保存文件退出</p><p> :w:保存文件</p><p> :w [文件名]: 另存为一个新文件，当前文件没有保存</p><p> :w!:强制保存</p><p> :x:保存并退出</p><p> :x!:强制保存退出</p><p> :ZZ:有修改保存退出，没有修改直接退出</p><p> :set nu:显示行号</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux常用指令</title>
+      <link href="2021/01/02/linux/linux/"/>
+      <url>2021/01/02/linux/linux/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe><h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">uname --help//显示帮助</span><br><span class="line">uname -v//输出内核版本信息</span><br><span class="line">uname --version//显示版本信息并退出</span><br><span class="line">who am i//等于who -m 登陆用户的信息</span><br><span class="line">who//查询当前登录在系统上的用户信息</span><br><span class="line"><span class="meta">#</span><span class="bash">//root登陆具有所有权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">//普通用户没什么权限</span></span><br></pre></td></tr></table></figure><h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p><strong>windows本地安装git bash使用</strong></p><p><em>1.从远处(服务器)复制文件到本地目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp/test.md ./</span></span><br></pre></td></tr></table></figure><p><em>2.从远处(服务器)复制目录到本地目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp ./</span></span><br></pre></td></tr></table></figure><p><em>3.上传本地文件到服务器指定目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/test.tar root@192.168.45.129:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure><p><em>4.上传本地目录到服务器指定目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/soft/text root@192.168.45.12:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure><p><em>5.windows文件传输到服务器</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>thread/multithread_1</title>
       <link href="2021/01/02/thread/multithread_1/"/>
       <url>2021/01/02/thread/multithread_1/</url>
@@ -153,56 +228,6 @@
     
     
     <entry>
-      <title>vim基本使用</title>
-      <link href="2020/09/13/linux/vim_1/"/>
-      <url>2020/09/13/linux/vim_1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1424018194&auto=1&height=66"></iframe><h2 id="三种模式转换"><a href="#三种模式转换" class="headerlink" title="三种模式转换"></a>三种模式转换</h2><p>命令模式：移动光标、删除  输入: / ?进入命令行模式 输入aiorAIOR进入插入模式</p><p>插入模式：输入文本 按ESC进入命令模式</p><p>命令行模式：搜索保存退出  按Esc进入模式</p><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ol><li><p>移动光标<br>h,j,k,l分别代表左下上右，可以加入数字控制位置,10j,向下移动10行<br>0:移动到当前行首  $:移动前行尾<br>G:移动到文件的最后一行,nG:移动到n行，gg移动到第一行<br>n<Enter> 向下移动n行</p></li><li><p>编辑<br>x:向后删除一个字符    X:向前删除一个字符<br>nx:向后删除n个字符<br>dd:删除一行            ndd:向下删除n行<br>u:撤销前一个操作</p></li><li><p>查找与替换<br> /word: 向后查找word单词，可以是正则表达式</p><p> ?word:向前查找word</p><p> :%s/word1/word2[gc]:将word1替换成word2，g全局，gc替换时确认,%整个文本替换</p><h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><p> i,I:进入插入模式，前者在当前位置插入，后者为当前行第一个非空白字符</p><p> o,O:前者在当前行的后面插入新行，后者在当前行的前面插入新行</p><p> r,R:前者替换光标所在的字符，后者从当前位置开始替换，直到按下Esc为止</p><h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><p> :进入命令行模式<br> :q :没有修改文件时推出</p><p> :q!:修改了文件，但不保存文件退出</p><p> :w:保存文件</p><p> :w [文件名]: 另存为一个新文件，当前文件没有保存</p><p> :w!:强制保存</p><p> :x:保存并退出</p><p> :x!:强制保存退出</p><p> :ZZ:有修改保存退出，没有修改直接退出</p><p> :set nu:显示行号</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> vim </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>linux常用指令</title>
-      <link href="2020/09/12/linux/linux_1/"/>
-      <url>2020/09/12/linux/linux_1/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1382985712&auto=1&height=66"></iframe><h2 id="linux常识性指令"><a href="#linux常识性指令" class="headerlink" title="linux常识性指令"></a>linux常识性指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">uname --help//显示帮助</span><br><span class="line">uname -v//输出内核版本信息</span><br><span class="line">uname --version//显示版本信息并退出</span><br><span class="line">who am i//等于who -m 登陆用户的信息</span><br><span class="line">who//查询当前登录在系统上的用户信息</span><br><span class="line"><span class="meta">#</span><span class="bash">//root登陆具有所有权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">//普通用户没什么权限</span></span><br></pre></td></tr></table></figure><h2 id="文件的传输"><a href="#文件的传输" class="headerlink" title="文件的传输"></a>文件的传输</h2><p><strong>windows本地安装git bash使用</strong></p><p><em>1.从远处(服务器)复制文件到本地目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp/test.md ./</span></span><br></pre></td></tr></table></figure><p><em>2.从远处(服务器)复制目录到本地目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp root@192.168.45.129:/usr/<span class="built_in">local</span>/tmp ./</span></span><br></pre></td></tr></table></figure><p><em>3.上传本地文件到服务器指定目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/test.tar root@192.168.45.129:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure><p><em>4.上传本地目录到服务器指定目录</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> scp /opt/soft/text root@192.168.45.12:/usr/<span class="built_in">local</span></span></span><br></pre></td></tr></table></figure><p><em>5.windows文件传输到服务器</em></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install lrzsz</span><br><span class="line">直接将文件拖入到命令行窗口即可</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>shell/shell_1</title>
       <link href="2020/07/13/shell/shell_1/"/>
       <url>2020/07/13/shell/shell_1/</url>
@@ -210,31 +235,6 @@
         <content type="html"><![CDATA[]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>夏天</title>
-      <link href="2020/07/05/summer/"/>
-      <url>2020/07/05/summer/</url>
-      
-        <content type="html"><![CDATA[<p>  夏天的风很自由。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> young </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 枯木逢春夏秋冬 </tag>
-            
-        </tags>
       
     </entry>
     
