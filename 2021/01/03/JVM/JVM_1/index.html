@@ -137,15 +137,15 @@ if (autoChangeMode === '1') {
     return setting
   }
 
-  var guestInfo = requestSetting(['nick','mail','link'],'nick')
-  var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+  var guestInfo = requestSetting(['nick','mail','link'],'nick, mail,link')
+  var requiredFields = requestSetting(['nick','mail'],'nick')
 
   function initValine () {
     window.valine = new Valine({
       el:'#vcomment',
       appId: 'v9HA2bN7MzVJqJkw21y1jWOc-gzGzoHsz',
       appKey: 'BLygW7EqfBlRimdl7mPVMlyD',
-      placeholder: 'Please leave your footprints',
+      placeholder: '填写邮箱可以及时收到回复哦',
       avatar: 'monsterid',
       meta: guestInfo,
       pageSize: '10',
